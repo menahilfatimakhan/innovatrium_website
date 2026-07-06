@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venture Den | Innovatrium, BNU</title>
+    <meta name="description" content="Venture Den by Innovatrium is a marketplace where startups, students, and small businesses showcase and sell their products to real customers.">
+    <meta property="og:title" content="Venture Den | Innovatrium">
+    <link rel="icon" type="image/png" href="assets/images/logos/Innovatrium%20Logo.png">
+    <link rel="apple-touch-icon" href="assets/images/logos/Innovatrium%20Logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        /* === Deep-green theme override (reads well on black) ================ */
+        :root {
+            --primary: #10d99c;
+            --primary-dark: #047857;
+            --primary-soft: rgba(16, 217, 156, 0.08);
+            --shadow-glow: 0 0 40px rgba(16, 217, 156, 0.16);
+        }
+
+        .btn-primary { color: #04231a; }
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--primary);
+            border-color: var(--primary);
+            box-shadow: 0 0 20px rgba(16, 217, 156, 0.35);
+        }
+
+        .page-hero::before {
+            background: radial-gradient(circle, rgba(16, 217, 156, 0.12) 0%, transparent 60%);
+        }
+
+        .section-badge { border-color: rgba(16, 217, 156, 0.25); }
+        .light-section .section-badge {
+            background: rgba(16, 217, 156, 0.10);
+            border-color: rgba(16, 217, 156, 0.25);
+            color: #047857;
+        }
+
+        .back-to-top { box-shadow: 0 4px 20px rgba(16, 217, 156, 0.35); }
+
+        /* === Page layout ==================================================== */
+        .content-section { padding: 6rem 0; }
+
+        .about-block {
+            max-width: 780px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            max-width: 750px;
+            margin: 4rem auto 0;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary), #ddd);
+            z-index: 0;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+            padding-bottom: 2.5rem;
+        }
+
+        .step-item:last-child { padding-bottom: 0; }
+
+        .step-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #fff;
+            border: 2px solid var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: var(--primary);
+            flex-shrink: 0;
+            transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+
+        .step-item:hover .step-icon {
+            background: var(--primary);
+            color: #04231a;
+            box-shadow: 0 0 20px rgba(16, 217, 156, 0.3);
+        }
+
+        .step-content {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #e8e8e8;
+            flex: 1;
+            transition: var(--transition);
+        }
+
+        .step-item:hover .step-content {
+            border-color: var(--primary-dark);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+        }
+
+        .step-content h3 { color: #111 !important; margin-bottom: 0.5rem; }
+
+        /* Successful ventures */
+        .ventures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .venture-card {
+            background: #f8f9fa;
+            border: 1px solid #e8e8e8;
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .venture-card:hover {
+            border-color: var(--primary-dark);
+            transform: translateY(-6px);
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .venture-icon {
+            width: 66px;
+            height: 66px;
+            border-radius: 50%;
+            background: var(--primary-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin: 0 auto 1.25rem;
+            transition: var(--transition);
+        }
+
+        .venture-card:hover .venture-icon { background: var(--primary); color: #04231a; }
+
+        .venture-card h3 { color: #111; margin-bottom: 0.35rem; font-size: 1.25rem; }
+        .venture-tag { color: var(--primary-dark); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.4px; }
+        .venture-card p { color: #555; font-size: 0.9rem; margin: 0.75rem 0 0; }
+
+        /* Benefits strip */
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            background: #f8f9fa;
+            border: 1px solid #e8e8e8;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .benefit-card:hover {
+            border-color: var(--primary-dark);
+            transform: translateY(-4px);
+        }
+
+        .benefit-card i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card h4 { font-size: 1rem; margin-bottom: 0.5rem; }
+        .benefit-card p { font-size: 0.9rem; margin-bottom: 0; }
+
+        .cta-box {
+            margin-top: 5rem;
+            text-align: center;
+            background: #ecfdf5;
+            padding: 4rem 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(16, 217, 156, 0.18);
+        }
+
+        .cta-box h2 { margin-bottom: 1rem; }
+        .cta-box p { margin-bottom: 2rem; }
+
+        /* Themed translucent "Join" box (emerald), overrides the default green tint */
+        .light-section .cta-box {
+            background: rgba(16, 217, 156, 0.08) !important;
+            border-color: rgba(16, 217, 156, 0.22) !important;
+        }
+
+        @media (max-width: 768px) {
+            .process-steps::before { left: 20px; }
+            .step-icon { width: 42px; height: 42px; font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="logo-lockup" aria-label="Innovatrium, BNU Incubation Center Home">
+            <img src="assets/images/logos/BNU%20logo.png" alt="Beaconhouse National University" class="logo-bnu">
+            <span class="logo-text">INNO<img src="assets/images/logos/logo-va.png" alt="" class="logo-va">TRIUM</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="incubation.html">Incubation</a>
+            <a href="cybersecurity.html">Cybersecurity</a>
+            <a href="skilltoearn.html">Skill to Earn</a>
+            <a href="ventureden.html" class="active">Venture Den</a>
+            <a href="#" class="nav-contact" data-cms="contact-email"><i class="fas fa-envelope"></i> Contact Us</a>
+        </div>
+        <button class="mobile-toggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+    </nav>
+
+    <main>
+
+    <header class="page-hero">
+        <div class="container reveal">
+            <span class="section-badge">Marketplace</span>
+            <h1>Venture Den</h1>
+            <p>A dynamic marketplace where startups, students, and small businesses showcase and sell their products, and connect with real customers.</p>
+            <div class="hero-meta">
+                <span data-cms="status"></span>
+                <span class="deadline-chip" data-cms="deadline"></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="content-section light-section">
+        <div class="container">
+            <div class="reveal about-block">
+                <span class="section-badge">About</span>
+                <h2>Where Ventures Meet Customers</h2>
+                <p>Venture Den is a dynamic marketplace and entrepreneurial platform that empowers startups, students, and small businesses to showcase and sell their products. We connect innovative ideas with real customers by providing a space where entrepreneurs can grow, validate their businesses, and build meaningful connections. At Venture Den, we believe every great venture deserves an opportunity to thrive.</p>
+            </div>
+
+            <!-- The journey (4 steps) -->
+            <div class="reveal text-center" style="margin-top: 5rem;">
+                <h2>The Venture Den Journey</h2>
+                <p style="max-width: 640px; margin: 0.5rem auto 0;">Four steps from application to a thriving stall at Venture Den.</p>
+            </div>
+            <div class="process-steps">
+                <div class="step-item reveal reveal-delay-1">
+                    <div class="step-icon"><i class="fas fa-file-signature"></i></div>
+                    <div class="step-content">
+                        <h3>1. Apply to Venture Den</h3>
+                        <p>Submit your application with details about your business, products, and brand. Our team reviews each application to ensure it aligns with Venture Den's vision and quality standards.</p>
+                    </div>
+                </div>
+                <div class="step-item reveal reveal-delay-2">
+                    <div class="step-icon"><i class="fas fa-store"></i></div>
+                    <div class="step-content">
+                        <h3>2. Selection and Stall Allocation</h3>
+                        <p>Selected entrepreneurs are notified and assigned exhibition space based on product category, availability, and event requirements. Participants also receive event guidelines and setup instructions.</p>
+                    </div>
+                </div>
+                <div class="step-item reveal reveal-delay-3">
+                    <div class="step-icon"><i class="fas fa-cash-register"></i></div>
+                    <div class="step-content">
+                        <h3>3. Showcase and Sell</h3>
+                        <p>Set up your stall at Venture Den and present your products to the BNU community. Engage with customers, build your brand, receive valuable feedback, and generate sales.</p>
+                    </div>
+                </div>
+                <div class="step-item reveal reveal-delay-4">
+                    <div class="step-icon"><i class="fas fa-seedling"></i></div>
+                    <div class="step-content">
+                        <h3>4. Grow Your Venture</h3>
+                        <p>Leverage the exposure, customer insights, and networking opportunities gained through Venture Den to refine your business, expand your reach, and prepare for future entrepreneurial opportunities.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Successful ventures -->
+            <div class="reveal text-center" style="margin-top: 5rem;">
+                <span class="section-badge">Success Stories</span>
+                <h2>Our Successful Ventures</h2>
+                <p style="max-width: 640px; margin: 0.5rem auto 0;">Real businesses that found their customers at Venture Den.</p>
+            </div>
+            <div class="ventures-grid">
+                <div class="venture-card reveal reveal-delay-1">
+                    <div class="venture-icon"><i class="fas fa-spray-can-sparkles"></i></div>
+                    <h3>Mistify</h3>
+                    <span class="venture-tag">Perfume Vending Machine</span>
+                    <p>Bringing signature scents to shoppers on demand through a smart, self-service perfume vending experience.</p>
+                </div>
+                <div class="venture-card reveal reveal-delay-2">
+                    <div class="venture-icon"><i class="fas fa-bottle-droplet"></i></div>
+                    <h3>Loralai</h3>
+                    <span class="venture-tag">Natural Olive Oil Company</span>
+                    <p>Cold-pressed, natural olive oil sourced with care, bringing pure and healthy flavour to every kitchen.</p>
+                </div>
+                <div class="venture-card reveal reveal-delay-3">
+                    <div class="venture-icon"><i class="fas fa-cake-candles"></i></div>
+                    <h3>Piece of Cake</h3>
+                    <span class="venture-tag">Home-Made Bakery</span>
+                    <p>Freshly baked, home-made treats and bakery items crafted to order for every celebration and craving.</p>
+                </div>
+            </div>
+
+            <!-- Benefits -->
+            <div class="reveal text-center" style="margin-top: 5rem;">
+                <span class="section-badge">Benefits</span>
+                <h2>Why Sell at Venture Den</h2>
+            </div>
+            <div class="benefits">
+                <div class="benefit-card reveal reveal-delay-1">
+                    <i class="fas fa-cash-register"></i>
+                    <h4>Real Sales</h4>
+                    <p>Sell directly to the BNU community and generate real revenue from day one</p>
+                </div>
+                <div class="benefit-card reveal reveal-delay-2">
+                    <i class="fas fa-comments"></i>
+                    <h4>Customer Feedback</h4>
+                    <p>Validate your product with honest, face-to-face feedback from real buyers</p>
+                </div>
+                <div class="benefit-card reveal reveal-delay-3">
+                    <i class="fas fa-bullhorn"></i>
+                    <h4>Brand Exposure</h4>
+                    <p>Put your brand in front of hundreds of students, staff, and visitors</p>
+                </div>
+                <div class="benefit-card reveal reveal-delay-4">
+                    <i class="fas fa-people-arrows"></i>
+                    <h4>Networking</h4>
+                    <p>Connect with fellow founders, mentors, and potential partners and customers</p>
+                </div>
+            </div>
+
+            <div class="cta-box reveal">
+                <h2>Your Venture. Our Marketplace.</h2>
+                <p>Apply now to secure your stall and start selling to real customers at Venture Den.</p>
+                <a href="#" class="btn btn-primary" data-cms="form" style="padding: 1rem 2.5rem;"><i class="fas fa-paper-plane"></i> Apply to Venture Den</a>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="assets/images/logos/BNU%20logo.png" alt="Beaconhouse National University" class="footer-bnu">
+                    <div class="logo-text">INNO<img src="assets/images/logos/logo-va.png" alt="" class="logo-va">TRIUM</div>
+                    <p>BNU Incubation Center. Start. Build. Succeed.</p>
+                    <div class="footer-social">
+                        <a href="#" data-cms="instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" data-cms="facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" data-cms="linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Programs</h4>
+                    <ul>
+                        <li><a href="incubation.html">Incubation Program</a></li>
+                        <li><a href="cybersecurity.html">Cybersecurity Clinic</a></li>
+                        <li><a href="skilltoearn.html">Skill to Earn</a></li>
+                        <li><a href="ventureden.html">Venture Den</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><a href="#" data-cms="contact-email" data-cms-text="show"><i class="fas fa-envelope"></i></a></li>
+                        <li><a href="#" data-cms="phone" data-cms-text="show"><i class="fas fa-phone"></i></a></li>
+                        <li><span class="footer-address" data-cms="address" data-cms-text="show"><i class="fas fa-map-marker-alt"></i></span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Innovatrium. BNU Incubation Center. All Rights Reserved.</p></div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+    <script src="assets/js/site-config.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

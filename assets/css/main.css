@@ -1,0 +1,30 @@
+/* ==========================================================================
+   Innovatrium — main stylesheet
+   Composes the modular partials in cascade order:
+   base → layout → components → utilities
+   Page-specific styles (e.g. pages/cybersecurity.css) are linked separately
+   in their own HTML, AFTER this file, so they can override tokens.
+   ========================================================================== */
+
+/* Base */
+@import url('base/_variables.css');
+@import url('base/_reset.css');
+@import url('base/_typography.css');
+
+/* Layout */
+@import url('layout/_container.css');
+@import url('layout/_navbar.css');
+@import url('layout/_page-hero.css');
+@import url('layout/_footer.css');
+
+/* Components */
+@import url('components/_logo.css');
+@import url('components/_buttons.css');
+@import url('components/_badges.css');
+@import url('components/_status.css');
+@import url('components/_cards.css');
+@import url('components/_back-to-top.css');
+@import url('components/_animations.css');
+
+/* Utilities (loaded last so contextual overrides win) */
+@import url('utilities/_utilities.css');

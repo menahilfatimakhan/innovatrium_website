@@ -1,0 +1,359 @@
+/* ==========================================================================
+   Cybersecurity Clinic — page-specific styles
+   Linked AFTER main.css so the :root override re-themes this page only.
+   Palette derived from the funders' logos:
+     • purple  #c42e9b  → The Asia Foundation (primary)
+     • blue    #3d9bff  → APAC "Cybersecurity" (accent)
+   ========================================================================== */
+
+/* --- Theme override (purple primary + blue accent) ----------------------- */
+:root {
+  --primary: #c42e9b;            /* brightened purple (was #802369) */
+  --primary-dark: #9e2079;
+  --primary-soft: rgba(196, 46, 155, 0.10);
+  --shadow-glow: 0 0 40px rgba(196, 46, 155, 0.20);
+  --accent-blue: #3d9bff;        /* APAC "Cybersecurity" blue */
+}
+
+.btn-primary { color: #fff; }
+.btn-primary:hover {
+  background: transparent;
+  color: var(--primary);
+  border-color: var(--primary);
+  box-shadow: 0 0 20px rgba(196, 46, 155, 0.4);
+}
+
+.page-hero::before {
+  background: radial-gradient(circle, rgba(196, 46, 155, 0.16) 0%, transparent 60%);
+}
+
+.section-badge { border-color: rgba(196, 46, 155, 0.3); }
+
+.light-section .section-badge {
+  background: rgba(196, 46, 155, 0.10);
+  border-color: rgba(196, 46, 155, 0.25);
+  color: #c42e9b;
+}
+
+.back-to-top { box-shadow: 0 4px 20px rgba(196, 46, 155, 0.35); }
+.back-to-top:hover { box-shadow: 0 6px 30px rgba(196, 46, 155, 0.55); }
+
+.glow-effect {
+  background: radial-gradient(circle, rgba(196, 46, 155, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+.light-section .cta-box {
+  background: #faf2f8 !important;
+  border-color: rgba(196, 46, 155, 0.18) !important;
+}
+
+/* --- Page layout --------------------------------------------------------- */
+.content-section { padding: var(--section-gap) 0; }
+
+.cyber-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.cyber-visual {
+  width: 100%;
+  aspect-ratio: 1;
+  max-width: 400px;
+  background: linear-gradient(135deg, rgba(196, 46, 155, 0.12), rgba(0, 0, 0, 0.4));
+  border: 1px solid rgba(196, 46, 155, 0.25);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: var(--shadow-glow);
+  margin: 0 auto;
+}
+
+.cyber-visual i {
+  font-size: clamp(3.5rem, 8vw, 5rem);
+  color: var(--primary);
+  opacity: 0.7;
+  z-index: 1;
+}
+
+/* APAC "Cybersecurity" blue accent on the network visual */
+.cyber-visual.cyber-visual--blue {
+  background: linear-gradient(135deg, rgba(61, 155, 255, 0.12), rgba(0, 0, 0, 0.4));
+  border-color: rgba(61, 155, 255, 0.25);
+  box-shadow: 0 0 40px rgba(61, 155, 255, 0.18);
+}
+.cyber-visual.cyber-visual--blue i { color: var(--accent-blue); }
+.cyber-visual.cyber-visual--blue .glow-effect {
+  background: radial-gradient(circle, rgba(61, 155, 255, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+/* --- "What you will learn" list ------------------------------------------ */
+.learn-list { margin-top: 1.5rem; }
+
+.learn-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Purple accent chevrons (raised specificity to win over base .learn-list li i) */
+.light-section .learn-list li i,
+.learn-list li i {
+  color: var(--primary);
+  margin-top: 5px;
+  flex-shrink: 0;
+  font-size: 0.8rem;
+}
+
+/* --- "Who is this for?" cards --------------------------------------------- */
+.who-section {
+  margin-top: clamp(3rem, 6vw, 5rem);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.who-card {
+  background: #f8f9fa;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.who-card:hover {
+  border-color: var(--primary-dark);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.who-card i {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.who-card h4 { font-size: 1rem; margin-bottom: 0.5rem; }
+.who-card p { font-size: 0.9rem; margin-bottom: 0; }
+
+/* --- Cohort photo gallery ------------------------------------------------- */
+.cohort-gallery {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.cohort-gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid rgba(196, 46, 155, 0.18);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  display: block;
+  transition: var(--transition);
+}
+
+.cohort-gallery img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 40px rgba(196, 46, 155, 0.18);
+}
+
+/* --- Funding / partner logos --------------------------------------------- */
+.funding-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  margin-top: 2.5rem;
+}
+
+.funding-logos img { height: 56px; width: auto; }
+
+/* --- Call to action ------------------------------------------------------- */
+.cta-box {
+  margin-top: clamp(3rem, 6vw, 5rem);
+  text-align: center;
+  background: #faf2f8;
+  padding: clamp(2.5rem, 6vw, 4rem) clamp(1.25rem, 4vw, 2rem);
+  border-radius: 16px;
+  border: 1px solid rgba(196, 46, 155, 0.18);
+}
+
+.cta-box h2 { margin-bottom: 1rem; }
+.cta-box p { margin-bottom: 2rem; }
+
+/* --- Icon tiles (cool, classy purple visuals) ----------------------------- */
+.cyber-tile {
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 4 / 3;
+  margin: 0 auto;
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(196, 46, 155, 0.30), transparent 55%),
+    linear-gradient(150deg, #1c0817 0%, #0a0309 72%);
+  border: 1px solid rgba(196, 46, 155, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-glow), inset 0 0 60px rgba(196, 46, 155, 0.08);
+  transition: var(--transition);
+}
+
+.cyber-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 48px rgba(196, 46, 155, 0.30);
+}
+
+/* Faded dotted tech grid */
+.cyber-tile::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(196, 46, 155, 0.35) 1px, transparent 1.5px);
+  background-size: 24px 24px;
+  -webkit-mask-image: radial-gradient(circle at center, #000 22%, transparent 72%);
+          mask-image: radial-gradient(circle at center, #000 22%, transparent 72%);
+  opacity: 0.55;
+}
+
+/* Glowing circular icon badge */
+.cyber-tile .tile-badge {
+  position: relative;
+  z-index: 1;
+  width: clamp(96px, 30%, 136px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 35% 30%, rgba(196, 46, 155, 0.45), rgba(196, 46, 155, 0.06));
+  border: 1px solid rgba(196, 46, 155, 0.55);
+  box-shadow: 0 0 44px rgba(196, 46, 155, 0.40), inset 0 0 26px rgba(196, 46, 155, 0.22);
+}
+
+/* Slow-spinning dashed ring for a subtle "cool" touch */
+.cyber-tile .tile-badge::after {
+  content: '';
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  border: 1px dashed rgba(196, 46, 155, 0.40);
+  animation: tileSpin 20s linear infinite;
+}
+
+.cyber-tile .tile-badge i {
+  font-size: clamp(2.4rem, 6vw, 3.2rem);
+  color: #f06fc4;
+  filter: drop-shadow(0 0 12px rgba(196, 46, 155, 0.65));
+}
+
+@keyframes tileSpin { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .cyber-tile .tile-badge::after { animation: none; }
+}
+
+/* --- Partner logos (Consortium + Global Cyber Alliance) ------------------- */
+.partner-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  margin-top: 2.5rem;
+}
+
+.partner-logos img {
+  height: 140px;   /* square marks — sized by footprint to match the wide funding logos */
+  width: auto;
+  transition: var(--transition);
+}
+
+/* --- Testimonials --------------------------------------------------------- */
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+  text-align: left;
+}
+
+.testimonial {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  padding: 2rem;
+  position: relative;
+  transition: var(--transition);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.testimonial:hover {
+  transform: translateY(-5px);
+  border-color: rgba(196, 46, 155, 0.3);
+  box-shadow: 0 14px 40px rgba(196, 46, 155, 0.12);
+}
+
+.testimonial .quote-mark {
+  font-size: 2.5rem;
+  line-height: 1;
+  color: rgba(196, 46, 155, 0.22);
+  font-family: Georgia, serif;
+  margin-bottom: 0.25rem;
+}
+
+.testimonial p {
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.testimonial-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #c42e9b, #3d9bff);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.testimonial-author .name { font-weight: 700; color: #1a1a1a; font-size: 0.92rem; }
+.testimonial-author .role { color: #888; font-size: 0.8rem; }
+
+/* --- Responsive ----------------------------------------------------------- */
+@media (max-width: 900px) {
+  .cyber-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .funding-logos { gap: 2rem; }
+  .funding-logos img { height: 44px; }
+  .partner-logos img { height: 104px; }
+}

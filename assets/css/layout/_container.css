@@ -1,0 +1,10 @@
+/* ==========================================================================
+   Container & section rhythm (fluid — no per-breakpoint overrides needed)
+   ========================================================================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+.section-padding { padding: var(--section-gap) 0; }

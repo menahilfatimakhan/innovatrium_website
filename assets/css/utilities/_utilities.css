@@ -1,0 +1,72 @@
+/* ==========================================================================
+   Utilities & contextual themes
+   ========================================================================== */
+.text-center { text-align: center; }
+
+/* --- Light section: inverts the dark theme for white content areas ------- */
+.light-section {
+  background-color: #ffffff;
+  color: #111;
+}
+
+.light-section h1,
+.light-section h2,
+.light-section h3,
+.light-section h4 {
+  color: #0a0a0a !important;
+}
+
+.light-section p { color: #555; }
+
+.light-section .section-badge {
+  background: rgba(0, 200, 0, 0.08);
+  border-color: rgba(0, 200, 0, 0.2);
+  color: #009900;
+}
+
+.light-section .glass-card,
+.light-section .track-card,
+.light-section .feature-card,
+.light-section .step-content,
+.light-section .cyber-image {
+  background: #f8f9fa;
+  border-color: #e8e8e8;
+}
+
+.light-section .glass-card:hover,
+.light-section .track-card:hover,
+.light-section .feature-card:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  border-color: var(--primary-dark);
+}
+
+.light-section .glass-card h3,
+.light-section .track-card h3,
+.light-section .feature-card h3,
+.light-section .step-content h3 {
+  color: #111 !important;
+}
+
+.light-section .cyber-grid-item li { color: #555; }
+
+.light-section .btn-outline {
+  color: #111;
+  border-color: #333;
+}
+
+.light-section .btn-outline:hover {
+  color: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
+.light-section .step-icon { background: #fff; }
+
+.light-section .process-steps::before { background: #ddd; }
+
+.light-section .cta-box {
+  background: #f0fdf0 !important;
+  border-color: rgba(0, 200, 0, 0.15) !important;
+}
+
+.light-section .cta-box h2 { color: #111 !important; }
+.light-section .cta-box p { color: #555 !important; }

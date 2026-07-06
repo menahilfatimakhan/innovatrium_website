@@ -1,0 +1,16 @@
+/* ==========================================================================
+   Section badge (pill label above section headings)
+   ========================================================================== */
+.section-badge {
+  display: inline-block;
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0.4rem 1.2rem;
+  border-radius: 50px;
+  border: 1px solid rgba(0, 255, 0, 0.15);
+  margin-bottom: 1.5rem;
+}

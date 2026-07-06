@@ -1,0 +1,95 @@
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer {
+  background: #0a0a0a;
+  padding: 5rem 0 2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand p { font-size: 0.9rem; line-height: 1.7; }
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.footer-social a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-card-alt);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.footer-social a:hover {
+  background: var(--primary);
+  color: var(--bg-dark);
+  border-color: var(--primary);
+  transform: translateY(-3px);
+}
+
+.footer-links h4 {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.footer-links ul li { margin-bottom: 0.75rem; }
+
+.footer-links ul li a {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-links ul li a:hover {
+  color: var(--primary);
+  padding-left: 4px;
+}
+
+/* Non-link footer items (e.g. address) share the link look, minus the hover */
+.footer-links ul li .footer-address {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.5;
+}
+
+.footer-links ul li .footer-address i { margin-top: 3px; }
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2.5rem;
+  margin-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  color: #555;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 1024px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
+
+@media (max-width: 768px) {
+  .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+}

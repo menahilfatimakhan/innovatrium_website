@@ -1,0 +1,34 @@
+/* ==========================================================================
+   Design Tokens — single source of truth for theme values
+   ========================================================================== */
+:root {
+  /* Brand */
+  --primary: #00FF00;
+  --primary-dark: #00cc00;
+  --primary-soft: rgba(0, 255, 0, 0.08);
+
+  /* Surfaces */
+  --bg-dark: #050505;
+  --bg-card: #0e0e0e;
+  --bg-card-alt: #161616;
+
+  /* Text */
+  --text-main: #FFFFFF;
+  --text-muted: #9e9e9e;
+
+  /* Borders */
+  --border-color: #222222;
+  --border-light: #e0e0e0;
+
+  /* Motion & effects */
+  --transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.45);
+  --shadow-glow: 0 0 40px rgba(0, 255, 0, 0.12);
+
+  /* Layout */
+  --header-height: 80px;
+
+  /* Fluid spacing — used across layout for responsive rhythm */
+  --section-gap: clamp(3.5rem, 8vw, 7rem);
+  --container-pad: clamp(1.25rem, 4vw, 2rem);
+}

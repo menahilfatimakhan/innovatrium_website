@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+server/node_modules/
+
+# Secrets — never commit real credentials
+.env
+server/.env
+
+# Local tooling / preview
+.claude/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.log

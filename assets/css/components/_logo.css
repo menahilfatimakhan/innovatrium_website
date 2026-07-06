@@ -1,0 +1,63 @@
+/* ==========================================================================
+   Logo wordmark — "INNO" + V/A glyph image + "TRIUM"
+   Used in both the navbar and the footer brand block.
+   ========================================================================== */
+.logo-text {
+  font-size: 1.3rem;
+  font-weight: 600;          /* was 800 — dialled back so the wordmark reads refined, not heavy */
+  letter-spacing: 1.5px;     /* was 3px */
+  white-space: nowrap;
+  color: #fff;
+}
+
+.logo-text span { color: var(--primary); }
+
+/* --- Navbar / footer lockup: BNU logo + Innovatrium wordmark ------------- */
+.logo-lockup {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.logo-bnu {
+  height: 38px;
+  width: auto;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* The green V/A glyph sits inline between the two text halves */
+.logo-va {
+  display: inline-block;
+  height: 1.75em;
+  width: auto;
+  vertical-align: middle;
+  margin: 0 -0.04em;
+  transform: translateY(-0.05em);
+}
+
+.logo-subtitle {
+  font-size: 0.55rem !important;
+  color: #888 !important;
+  letter-spacing: 2.5px !important;
+  font-weight: 400 !important;
+  display: block !important;
+  margin-top: -3px !important;
+  text-transform: uppercase !important;
+}
+
+/* In the footer the logo is a simple inline-flowing block (no flex gap) */
+.footer-brand .logo-text {
+  display: block;
+  margin-bottom: 1.25rem;
+}
+
+.footer-brand .logo-text::before { display: none; }  /* no divider in footer */
+
+/* BNU logo above the Innovatrium wordmark in the footer */
+.footer-bnu {
+  height: 44px;
+  width: auto;
+  display: block;
+  margin-bottom: 1.1rem;
+}
