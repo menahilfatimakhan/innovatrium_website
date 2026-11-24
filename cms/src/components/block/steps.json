@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_block_steps",
+  "info": {
+    "displayName": "Steps",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "badge": { "type": "string" },
+    "heading": { "type": "string" },
+    "intro": { "type": "text" },
+    "styleKey": { "type": "string", "description": "Presentation variant key, see block.card-grid.styleKey" },
+    "steps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.step"
+    }
+  }
+}

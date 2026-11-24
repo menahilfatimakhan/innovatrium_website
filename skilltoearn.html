@@ -3,150 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skill to Earn | Innovatrium, BNU</title>
-    <meta name="description" content="Master high-demand technical skills with Innovatrium's Skill to Earn program. Full Stack Dev, App Development, UI/UX Design, and AI tracks available.">
-    <meta property="og:title" content="Skill to Earn | Innovatrium">
-    <link rel="icon" type="image/png" href="assets/images/logos/Innovatrium%20Logo.png">
-    <link rel="apple-touch-icon" href="assets/images/logos/Innovatrium%20Logo.png">
+    <title>Skill to Earn Program | Innovatrium, BNU</title>
+    <meta name="description" content="Master high-demand technical skills and jumpstart your career through immediate freelancing and earning pathways.">
+    <meta property="og:title" content="Skill to Earn Program | Innovatrium">
+    <meta name="generator" content="Innovatrium CMS">
+    <link rel="icon" type="image/png" href="assets/images/logos/logo-va.png">
+    <link rel="apple-touch-icon" href="assets/images/logos/logo-va.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- See assets/css/base/_variables.css for the font-choice + AA-contrast notes -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/pages/program.css">
+    <link rel="stylesheet" href="assets/css/pages/legacy-program.css">
     <style>
-        /* === Teal theme override (brand colour #069494) ===================== */
         :root {
-            --primary: #0ac5c5;
-            --primary-dark: #069494;
-            --primary-soft: rgba(10, 197, 197, 0.08);
-            --shadow-glow: 0 0 40px rgba(10, 197, 197, 0.18);
-        }
-
-        .btn-primary { color: #043a3a; }
-        .btn-primary:hover {
-            background: transparent;
-            color: var(--primary);
-            border-color: var(--primary);
-            box-shadow: 0 0 20px rgba(10, 197, 197, 0.35);
-        }
-
-        .page-hero::before {
-            background: radial-gradient(circle, rgba(10, 197, 197, 0.12) 0%, transparent 60%);
-        }
-
-        .section-badge { border-color: rgba(10, 197, 197, 0.25); }
-        .light-section .section-badge {
-            background: rgba(10, 197, 197, 0.10);
-            border-color: rgba(10, 197, 197, 0.25);
-            color: #069494;
-        }
-
-        .back-to-top { box-shadow: 0 4px 20px rgba(10, 197, 197, 0.35); }
-
-        /* === Page layout ==================================================== */
-        .content-section { padding: 6rem 0; }
-
-        .skill-tracks {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .track-card {
-            background: #f8f9fa;
-            padding: 2.5rem 2rem;
-            border-radius: 12px;
-            border: 1px solid #e8e8e8;
-            transition: var(--transition);
-            text-align: center;
-        }
-
-        .track-card:hover {
-            border-color: var(--primary-dark);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
-            transform: translateY(-6px);
-        }
-
-        .track-card .icon-wrap {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            background: var(--primary-soft);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            transition: var(--transition);
-        }
-
-        .track-card .icon-wrap i {
-            font-size: 1.6rem;
-            color: var(--primary);
-        }
-
-        .track-card:hover .icon-wrap {
-            background: var(--primary);
-            transform: scale(1.1);
-        }
-
-        .track-card:hover .icon-wrap i { color: #043a3a; }
-
-        .track-card h3 { margin-bottom: 0.5rem; }
-
-        /* How it works */
-        .how-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .how-step {
-            text-align: center;
-            padding: 2rem 1.5rem;
-            background: #f8f9fa;
-            border-radius: 12px;
-            border: 1px solid #e8e8e8;
-        }
-
-        .how-step .step-num {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: var(--primary);
-            color: #043a3a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 1.2rem;
-            margin: 0 auto 1rem;
-        }
-
-        .how-step h4 { font-size: 1rem; margin-bottom: 0.5rem; }
-        .how-step p { font-size: 0.9rem; margin-bottom: 0; }
-
-        .cta-box {
-            margin-top: 5rem;
-            text-align: center;
-            background: #eefafa;
-            padding: 4rem 2rem;
-            border-radius: 16px;
-            border: 1px solid rgba(10, 197, 197, 0.18);
-        }
-
-        .cta-box h2 { margin-bottom: 1rem; }
-        .cta-box p { margin-bottom: 2rem; }
-
-        /* Themed translucent "Join" box (teal), overrides the default green tint */
-        .light-section .cta-box {
-            background: rgba(10, 197, 197, 0.07) !important;
-            border-color: rgba(10, 197, 197, 0.22) !important;
-        }
-
-        @media (max-width: 768px) {
-            .how-grid { grid-template-columns: 1fr; }
+            --primary: #2A9D8F;
+            --primary-dark: #1F7A70;
+            --primary-soft: rgba(42, 157, 143, 0.1);
+            --primary-soft-line: rgba(42, 157, 143, 0.18);
+            --primary-soft-ink: rgba(42, 157, 143, 0.22);
+            --shadow-glow: 0 10px 28px rgba(42, 157, 143, 0.22);
         }
     </style>
 </head>
@@ -154,7 +32,6 @@
 
     <nav class="navbar" role="navigation" aria-label="Main navigation">
         <a href="index.html" class="logo-lockup" aria-label="Innovatrium, BNU Incubation Center Home">
-            <img src="assets/images/logos/BNU%20logo.png" alt="Beaconhouse National University" class="logo-bnu">
             <span class="logo-text">INNO<img src="assets/images/logos/logo-va.png" alt="" class="logo-va">TRIUM</span>
         </a>
         <div class="nav-links">
@@ -169,56 +46,62 @@
     </nav>
 
     <main>
-
-    <header class="page-hero">
-        <div class="container reveal">
-            <span class="section-badge">Program</span>
-            <h1>Skill to Earn Program</h1>
-            <p>Master high-demand technical skills and jumpstart your career through immediate freelancing and earning pathways.</p>
-            <div class="hero-meta">
-                <span data-cms="status"></span>
-                <span class="deadline-chip" data-cms="deadline"></span>
+        <header class="page-hero">
+            <div class="container reveal">
+                <span class="section-badge">Program</span>
+                <h1>Skill to Earn Program</h1>
+                <p>Master high-demand technical skills and jumpstart your career through immediate freelancing and earning pathways.</p>
+                <div class="hero-meta">
+                <a class="status-pill is-open" href="https://forms.gle/oFdWpoyjSpQq7Yb38" target="_blank" rel="noopener"><span class="status-dot"></span> Applications Open</a>
+                <span class="deadline-chip"><i class="fas fa-calendar-day" aria-hidden="true"></i> Deadline: <strong>15 November 2025</strong></span>
             </div>
-        </div>
-    </header>
+            </div>
+        </header>
 
-    <section class="content-section light-section">
-        <div class="container">
-            <div class="reveal text-center" style="max-width: 750px; margin: 0 auto;">
+        <section class="content-section light-section">
+            <div class="container">
+            <div class="prog-section prog-rich reveal center">
+                
                 <h2>Fast-Track Your Tech Career</h2>
                 <p>The Skill to Earn program is intensive and outcome-driven. We provide accelerated learning in high-demand areas so you can quickly build a portfolio, start freelancing, or land a well-paying tech job. Our curriculum bridges the gap between academics and industry.</p>
+                
             </div>
 
-            <div class="reveal" style="margin-top: 4rem; text-align: center;">
+            <div class="reveal" style="margin-top: 2.5rem; text-align: center;">
                 <span class="section-badge">What We Offer</span>
                 <h2>Available Tracks</h2>
+                
             </div>
             <div class="skill-tracks">
                 <div class="track-card reveal reveal-delay-1">
                     <div class="icon-wrap"><i class="fas fa-code"></i></div>
                     <h3>Full Stack Web Dev</h3>
+                    
                     <p>Learn modern frameworks, design systems, and backend architectures.</p>
                 </div>
                 <div class="track-card reveal reveal-delay-2">
                     <div class="icon-wrap"><i class="fas fa-mobile-screen-button"></i></div>
                     <h3>App Development</h3>
+                    
                     <p>Build native and cross-platform mobile apps for iOS and Android.</p>
                 </div>
                 <div class="track-card reveal reveal-delay-3">
                     <div class="icon-wrap"><i class="fas fa-pen-nib"></i></div>
                     <h3>UI/UX Design</h3>
+                    
                     <p>Master user research, wireframing, and interactive prototyping.</p>
                 </div>
                 <div class="track-card reveal reveal-delay-4">
                     <div class="icon-wrap"><i class="fas fa-brain"></i></div>
                     <h3>AI and Machine Learning</h3>
+                    
                     <p>Dive into data science, generative AI, and automation workflows.</p>
                 </div>
             </div>
 
-            <!-- How It Works -->
-            <div class="reveal text-center" style="margin-top: 5rem;">
+            <div class="reveal text-center" style="margin-top: 3rem;">
                 <h2>How It Works</h2>
+                
             </div>
             <div class="how-grid">
                 <div class="how-step reveal reveal-delay-1">
@@ -241,18 +124,17 @@
             <div class="cta-box reveal">
                 <h2>Join the Next Bootcamp</h2>
                 <p>Turn your new skills into income within weeks.</p>
-                <a href="#" class="btn btn-primary" data-cms="form"><i class="fas fa-graduation-cap"></i> Enroll Now</a>
+                <a href="https://forms.gle/oFdWpoyjSpQq7Yb38" class="btn btn-primary" target="_blank" rel="noopener"><i class="fas fa-graduation-cap"></i> Enroll Now</a>
+                
             </div>
-        </div>
-    </section>
-
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="assets/images/logos/BNU%20logo.png" alt="Beaconhouse National University" class="footer-bnu">
                     <div class="logo-text">INNO<img src="assets/images/logos/logo-va.png" alt="" class="logo-va">TRIUM</div>
                     <p>BNU Incubation Center. Start. Build. Succeed.</p>
                     <div class="footer-social">
@@ -264,8 +146,8 @@
                 <div class="footer-links">
                     <h4>Programs</h4>
                     <ul>
-                        <li><a href="incubation.html">Incubation Program</a></li>
-                        <li><a href="cybersecurity.html">Cybersecurity Clinic</a></li>
+                        <li><a href="incubation.html">Incubation</a></li>
+                        <li><a href="cybersecurity.html">Cybersecurity</a></li>
                         <li><a href="skilltoearn.html">Skill to Earn</a></li>
                         <li><a href="ventureden.html">Venture Den</a></li>
                     </ul>

@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_page_heroes",
+  "info": {
+    "displayName": "Page Hero",
+    "icon": "landscape"
+  },
+  "options": {},
+  "attributes": {
+    "badge": { "type": "string" },
+    "title": { "type": "string" },
+    "subtitle": { "type": "text" },
+    "accentText": { "type": "string", "description": "Optional phrase within subtitle to render with the italic serif accent style (homepage only)" }
+  }
+}

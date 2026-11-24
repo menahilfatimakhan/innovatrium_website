@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_block_stats",
+  "info": {
+    "displayName": "Stats",
+    "icon": "chart-pie"
+  },
+  "options": {},
+  "attributes": {
+    "badge": { "type": "string" },
+    "intro": { "type": "text" },
+    "linkLabel": { "type": "string" },
+    "linkHref": { "type": "string" },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.stat-cell"
+    }
+  }
+}

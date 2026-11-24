@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_shared_page_themes",
+  "info": {
+    "displayName": "Page Theme",
+    "icon": "palette"
+  },
+  "options": {},
+  "attributes": {
+    "primary": { "type": "string" },
+    "primaryDark": { "type": "string" }
+  }
+}

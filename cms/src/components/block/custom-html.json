@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_block_custom_htmls",
+  "info": {
+    "displayName": "Custom HTML Fragment",
+    "icon": "code"
+  },
+  "options": {},
+  "attributes": {
+    "badge": { "type": "string" },
+    "heading": { "type": "string" },
+    "intro": { "type": "text" },
+    "note": { "type": "string" },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.label-text"
+    }
+  }
+}

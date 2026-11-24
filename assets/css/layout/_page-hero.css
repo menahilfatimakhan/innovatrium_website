@@ -2,30 +2,25 @@
    Page hero (sub-page headers)
    ========================================================================== */
 .page-hero {
-  padding: clamp(8rem, 14vw, 11rem) 0 clamp(3rem, 6vw, 5rem);
+  /* Fills the screen below the fixed nav and centers its content in that
+     space, so the title sits alone in the middle of the first screen
+     instead of the next section's heading peeking in at the bottom edge. */
+  margin-top: var(--header-height);
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
   background: var(--bg-dark);
 }
 
-.page-hero::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: min(700px, 90vw);
-  height: min(700px, 90vw);
-  background: radial-gradient(circle, rgba(0, 255, 0, 0.08) 0%, transparent 60%);
-  filter: blur(60px);
-  z-index: 0;
-}
-
 .page-hero .container { position: relative; z-index: 1; }
 
 .page-hero h1 {
-  color: var(--primary) !important;
+  color: var(--text-main);
   margin-bottom: 1.5rem;
 }
 
@@ -33,5 +28,5 @@
   font-size: clamp(1rem, 1.6vw, 1.15rem);
   max-width: 600px;
   margin: 0 auto;
-  color: #aaa;
+  color: var(--text-muted);
 }

@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages",
+  "info": {
+    "singularName": "page",
+    "pluralName": "pages",
+    "displayName": "Page",
+    "description": "A site page built from content blocks"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "navLabel": { "type": "string", "required": true },
+    "slug": { "type": "uid", "targetField": "navLabel", "required": true },
+    "order": { "type": "integer", "default": 0 },
+    "isHomepage": { "type": "boolean", "default": false },
+    "isGenerated": {
+      "type": "boolean",
+      "default": false,
+      "description": "Only pages flagged true are (re)written to <slug>.html by generate.js; hand-built pages stay untouched until converted."
+    },
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.page-hero"
+    },
+    "theme": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.page-theme"
+    },
+    "application": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.application-info"
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "block.rich-text",
+        "block.card-grid",
+        "block.steps",
+        "block.testimonials",
+        "block.logos",
+        "block.cta",
+        "block.stats",
+        "block.gallery",
+        "block.custom-html",
+        "block.highlight"
+      ]
+    }
+  }
+}

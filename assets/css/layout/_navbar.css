@@ -11,18 +11,18 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 5%;
-  background: rgba(5, 5, 5, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(245, 242, 236, 0.86);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid var(--border-color);
   transition: var(--transition);
 }
 
 .navbar.scrolled {
-  background: rgba(5, 5, 5, 0.95);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
-  height: 68px;
+  background: rgba(245, 242, 236, 0.97);
+  box-shadow: 0 4px 24px rgba(20, 20, 20, 0.06);
+  height: 66px;
 }
 
 .nav-links {
@@ -35,7 +35,7 @@
   font-size: 0.9rem;
   font-weight: 500;
   position: relative;
-  color: #bbb;
+  color: var(--text-main);
   padding: 0.25rem 0;
 }
 
@@ -43,15 +43,16 @@
   content: '';
   position: absolute;
   bottom: -2px;
-  left: 0;
+  left: 50%;
   width: 0%;
   height: 2px;
   background: var(--primary);
+  transform: translateX(-50%);
   transition: width 0.3s ease;
 }
 
 .nav-links a:hover,
-.nav-links a.active { color: #fff; }
+.nav-links a.active { color: var(--text-main); }
 
 .nav-links a:hover::after,
 .nav-links a.active::after { width: 100%; }
@@ -60,9 +61,9 @@
 .nav-links .nav-contact {
   margin-left: 0.75rem;
   padding: 0.5rem 1.25rem;
-  border: 1px solid var(--primary);
+  border: 1px solid var(--text-main);
   border-radius: 50px;
-  color: var(--primary);
+  color: var(--text-main);
   font-weight: 600;
   transition: var(--transition);
 }
@@ -70,8 +71,9 @@
 .nav-links .nav-contact::after { display: none; }   /* no underline animation on the pill */
 
 .nav-links .nav-contact:hover {
-  background: var(--primary);
+  background: var(--text-main);
   color: var(--bg-dark);
+  border-color: var(--text-main);
   transform: translateY(-1px);
 }
 
@@ -92,7 +94,7 @@
     left: -100%;
     width: 100%;
     height: calc(100vh - var(--header-height));
-    background-color: rgba(5, 5, 5, 0.98);
+    background-color: rgba(245, 242, 236, 0.98);
     flex-direction: column;
     justify-content: center;
     align-items: center;

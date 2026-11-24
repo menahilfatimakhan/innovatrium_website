@@ -4,224 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Incubation Program | Innovatrium, BNU</title>
-    <meta name="description" content="Join the Innovatrium Incubation Program at BNU. Get mentorship, workspace, funding, and a pathway to launch your scalable startup.">
+    <meta name="description" content="Where bright ideas take flight. Transform your startup vision into a scalable venture with our comprehensive support ecosystem.">
     <meta property="og:title" content="Incubation Program | Innovatrium">
-    <meta property="og:description" content="Transform your startup vision into a scalable venture with our 6-month incubation program.">
-    <link rel="icon" type="image/png" href="assets/images/logos/Innovatrium%20Logo.png">
-    <link rel="apple-touch-icon" href="assets/images/logos/Innovatrium%20Logo.png">
+    <meta name="generator" content="Innovatrium CMS">
+    <link rel="icon" type="image/png" href="assets/images/logos/logo-va.png">
+    <link rel="apple-touch-icon" href="assets/images/logos/logo-va.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- See assets/css/base/_variables.css for the font-choice + AA-contrast notes -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/pages/program.css">
+    <link rel="stylesheet" href="assets/css/pages/legacy-program.css">
     <style>
-        .content-section { padding: 6rem 0; }
-
-        .feature-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .feature-card {
-            background: var(--bg-card);
-            padding: 2.5rem;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            transition: var(--transition);
-        }
-
-        .feature-card:hover {
-            border-color: var(--primary);
-            box-shadow: 0 8px 30px rgba(0, 255, 0, 0.08);
-            transform: translateY(-5px);
-        }
-
-        .feature-card .icon-wrap {
-            width: 56px;
-            height: 56px;
-            border-radius: 14px;
-            background: var(--primary-soft);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            transition: var(--transition);
-        }
-
-        .feature-card .icon-wrap i {
-            font-size: 1.4rem;
-            color: var(--primary);
-        }
-
-        .feature-card:hover .icon-wrap {
-            background: var(--primary);
-        }
-
-        .feature-card:hover .icon-wrap i {
-            color: var(--bg-dark);
-        }
-
-        /* Our Startups */
-        .startups-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .startup-card {
-            background:
-                radial-gradient(120% 80% at 0% 0%, rgba(0, 255, 0, 0.06), transparent 55%),
-                linear-gradient(160deg, #121512 0%, #0b0d0b 100%);
-            border: 1px solid rgba(0, 255, 0, 0.14);
-            border-radius: 18px;
-            padding: 2.5rem;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .startup-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 3px;
-            background: linear-gradient(90deg, var(--primary), transparent);
-            opacity: 0.5;
-            transition: var(--transition);
-        }
-
-        .startup-card:hover {
-            border-color: rgba(0, 255, 0, 0.45);
-            transform: translateY(-6px);
-            box-shadow: 0 18px 48px rgba(0, 0, 0, 0.45), 0 0 40px rgba(0, 255, 0, 0.10);
-        }
-
-        .startup-card:hover::before { opacity: 1; }
-
-        .startup-head {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.4rem;
-        }
-
-        .startup-logo {
-            width: 56px;
-            height: 56px;
-            border-radius: 14px;
-            background: var(--primary-soft);
-            border: 1px solid rgba(0, 255, 0, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-            color: var(--primary);
-            flex-shrink: 0;
-            transition: var(--transition);
-        }
-
-        .startup-card:hover .startup-logo {
-            background: var(--primary);
-            color: var(--bg-dark);
-            transform: scale(1.05);
-        }
-
-        /* Beat the light-section h3 rule so titles are visible on the dark card */
-        .light-section .startup-card h3.startup-name {
-            margin: 0 0 0.2rem;
-            font-size: 1.3rem;
-            color: #ffffff !important;
-        }
-
-        .startup-tag {
-            font-size: 0.8rem;
-            color: var(--primary);
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        .startup-card p { margin-bottom: 0; color: #b8c0b8; }
-
-        .startup-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.45rem;
-            margin-top: 1.5rem;
-            font-size: 0.72rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: var(--primary);
-            background: var(--primary-soft);
-            border: 1px solid rgba(0, 255, 0, 0.25);
-            padding: 0.4rem 0.9rem;
-            border-radius: 50px;
-        }
-
-        .startup-badge i { font-size: 0.85em; }
-
-        /* Timeline */
-        .timeline {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-            position: relative;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            top: 32px;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--primary), transparent);
-            z-index: 0;
-        }
-
-        .timeline-item {
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .timeline-dot {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: var(--primary);
-            margin: 0 auto 1.5rem;
-            box-shadow: 0 0 20px rgba(0,255,0,0.3);
-        }
-
-        .timeline-item h4 {
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-item p {
-            font-size: 0.9rem;
-        }
-
-        .cta-box {
-            margin-top: 5rem;
-            text-align: center;
-            background: var(--bg-card);
-            padding: 4rem 2rem;
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
-        }
-
-        .cta-box h2 { margin-bottom: 1rem; }
-        .cta-box p { margin-bottom: 2rem; }
-
-        @media (max-width: 768px) {
-            .timeline { grid-template-columns: 1fr; }
-            .timeline::before { display: none; }
+        :root {
+            --primary: #A8D5BA;
+            --primary-dark: #2F9E5B;
+            --primary-soft: rgba(168, 213, 186, 0.1);
+            --primary-soft-line: rgba(168, 213, 186, 0.18);
+            --primary-soft-ink: rgba(168, 213, 186, 0.22);
+            --shadow-glow: 0 10px 28px rgba(168, 213, 186, 0.22);
         }
     </style>
 </head>
@@ -229,7 +32,6 @@
 
     <nav class="navbar" role="navigation" aria-label="Main navigation">
         <a href="index.html" class="logo-lockup" aria-label="Innovatrium, BNU Incubation Center Home">
-            <img src="assets/images/logos/BNU%20logo.png" alt="Beaconhouse National University" class="logo-bnu">
             <span class="logo-text">INNO<img src="assets/images/logos/logo-va.png" alt="" class="logo-va">TRIUM</span>
         </a>
         <div class="nav-links">
@@ -244,52 +46,60 @@
     </nav>
 
     <main>
-
-    <header class="page-hero">
-        <div class="container reveal">
-            <span class="section-badge">Program</span>
-            <h1>Incubation Program</h1>
-            <p>Where bright ideas take flight. Transform your startup vision into a scalable venture with our comprehensive support ecosystem.</p>
-            <div class="hero-meta">
-                <span data-cms="status"></span>
-                <span class="deadline-chip" data-cms="deadline"></span>
+        <header class="page-hero">
+            <div class="container reveal">
+                <span class="section-badge">Program</span>
+                <h1>Incubation Program</h1>
+                <p>Where bright ideas take flight. Transform your startup vision into a scalable venture with our comprehensive support ecosystem.</p>
+                <div class="hero-meta">
+                <span class="status-pill is-closed"><span class="status-dot"></span> Applications Closed</span>
+                <span class="deadline-chip"><i class="fas fa-calendar-day" aria-hidden="true"></i> Deadline: <strong>15 October 2025</strong></span>
             </div>
-        </div>
-    </header>
+            </div>
+        </header>
 
-    <section class="content-section light-section">
-        <div class="container">
-            <div class="reveal" style="max-width: 750px;">
+        <section class="content-section light-section">
+            <div class="container">
+            <div class="prog-section prog-rich reveal">
+                
                 <h2>Program Overview</h2>
                 <p>The Innovatrium Incubation Program provides early-stage startups with the fundamental resources required to succeed. Over our comprehensive <strong>6-month program</strong>, we surround you with mentors, offer state-of-the-art office space, and introduce you to our extensive investor network.</p>
+                
             </div>
 
+            <div class="reveal" style="margin-top: 2.5rem; text-align: center;">
+                
+                
+                
+            </div>
             <div class="feature-list">
                 <div class="feature-card reveal reveal-delay-1">
                     <div class="icon-wrap"><i class="fas fa-chalkboard-teacher"></i></div>
                     <h3>Expert Mentorship</h3>
+                    
                     <p>Get guided by industry veterans who have successfully navigated the entrepreneurial journey. Weekly 1-on-1 sessions.</p>
                 </div>
                 <div class="feature-card reveal reveal-delay-2">
                     <div class="icon-wrap"><i class="fas fa-building"></i></div>
                     <h3>Premium Workspace</h3>
+                    
                     <p>Work from the vibrant BNU incubator space featuring 24/7 access, high-speed internet, and collaborative zones.</p>
                 </div>
                 <div class="feature-card reveal reveal-delay-3">
                     <div class="icon-wrap"><i class="fas fa-handshake"></i></div>
                     <h3>Networking and Funding</h3>
+                    
                     <p>Connect with a thriving community of fellow founders, industry experts, investors, and potential co-founders.</p>
                 </div>
             </div>
 
-            <!-- Our Startups -->
-            <div class="reveal text-center" style="margin-top: 5rem;">
+            <div class="reveal text-center" style="margin-top: 3rem;">
                 <span class="section-badge">Success Stories</span>
                 <h2>Our Startups</h2>
                 <p style="max-width: 640px; margin: 0.5rem auto 0;">Real ventures built inside Innovatrium that are now solving real problems and reaching real customers.</p>
             </div>
             <div class="startups-grid">
-                <div class="startup-card reveal reveal-delay-1">
+                <div class="startup-card reveal">
                     <div class="startup-head">
                         <div class="startup-logo"><i class="fas fa-shield-heart"></i></div>
                         <div>
@@ -300,7 +110,7 @@
                     <p>Pakistan's first digital ecosystem built by women, for women. A mobile app that puts safety, support, and community within reach, designed around the real needs of the women it serves.</p>
                     <span class="startup-badge"><i class="fas fa-venus"></i> Built by Women, for Women</span>
                 </div>
-                <div class="startup-card reveal reveal-delay-2">
+                <div class="startup-card reveal">
                     <div class="startup-head">
                         <div class="startup-logo"><i class="fas fa-bullseye"></i></div>
                         <div>
@@ -313,46 +123,42 @@
                 </div>
             </div>
 
-            <!-- Timeline -->
-            <div class="reveal" style="margin-top: 5rem;">
-                <div class="text-center">
-                    <span class="section-badge">Your Journey</span>
-                    <h2>Program Timeline</h2>
+            <div class="reveal text-center" style="margin-top: 3rem;">
+                <h2>Program Timeline</h2>
+                
+            </div>
+            <div class="timeline">
+                <div class="timeline-item reveal reveal-delay-1">
+                    <div class="timeline-dot"></div>
+                    <h4>Month 1 to 2</h4>
+                    <p>Idea validation, market research, and mentor matching</p>
                 </div>
-                <div class="timeline">
-                    <div class="timeline-item reveal reveal-delay-1">
-                        <div class="timeline-dot"></div>
-                        <h4>Month 1 to 2</h4>
-                        <p>Idea validation, market research, and mentor matching</p>
-                    </div>
-                    <div class="timeline-item reveal reveal-delay-2">
-                        <div class="timeline-dot"></div>
-                        <h4>Month 3 to 4</h4>
-                        <p>Product development, pilot testing, and iteration</p>
-                    </div>
-                    <div class="timeline-item reveal reveal-delay-3">
-                        <div class="timeline-dot"></div>
-                        <h4>Month 5 to 6</h4>
-                        <p>Pitch prep, investor introductions, and demo day</p>
-                    </div>
+                <div class="timeline-item reveal reveal-delay-2">
+                    <div class="timeline-dot"></div>
+                    <h4>Month 3 to 4</h4>
+                    <p>Product development, pilot testing, and iteration</p>
+                </div>
+                <div class="timeline-item reveal reveal-delay-3">
+                    <div class="timeline-dot"></div>
+                    <h4>Month 5 to 6</h4>
+                    <p>Pitch prep, investor introductions, and demo day</p>
                 </div>
             </div>
 
             <div class="cta-box reveal">
                 <h2>Ready to Launch?</h2>
                 <p>Applications for the next cohort are open. Register your interest to secure a spot.</p>
-                <a href="#" class="btn btn-primary" data-cms="form"><i class="fas fa-paper-plane"></i> Apply Now</a>
+                <a href="https://forms.gle/Z33pWTSrQTUqCgvP8" class="btn btn-primary is-disabled" aria-disabled="true" target="_blank" rel="noopener"><i class="fas fa-paper-plane"></i> Apply Now</a>
+                
             </div>
-        </div>
-    </section>
-
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="assets/images/logos/BNU%20logo.png" alt="Beaconhouse National University" class="footer-bnu">
                     <div class="logo-text">INNO<img src="assets/images/logos/logo-va.png" alt="" class="logo-va">TRIUM</div>
                     <p>BNU Incubation Center. Start. Build. Succeed.</p>
                     <div class="footer-social">
@@ -364,8 +170,8 @@
                 <div class="footer-links">
                     <h4>Programs</h4>
                     <ul>
-                        <li><a href="incubation.html">Incubation Program</a></li>
-                        <li><a href="cybersecurity.html">Cybersecurity Clinic</a></li>
+                        <li><a href="incubation.html">Incubation</a></li>
+                        <li><a href="cybersecurity.html">Cybersecurity</a></li>
                         <li><a href="skilltoearn.html">Skill to Earn</a></li>
                         <li><a href="ventureden.html">Venture Den</a></li>
                     </ul>

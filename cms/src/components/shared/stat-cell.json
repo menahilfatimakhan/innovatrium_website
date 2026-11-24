@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_shared_stat_cells",
+  "info": {
+    "displayName": "Stat Cell",
+    "icon": "chart-pie"
+  },
+  "options": {},
+  "attributes": {
+    "value": { "type": "string" },
+    "label": { "type": "string" }
+  }
+}

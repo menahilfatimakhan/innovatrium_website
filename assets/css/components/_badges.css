@@ -1,16 +1,30 @@
 /* ==========================================================================
    Section badge (pill label above section headings)
    ========================================================================== */
+/* Small-caps kicker label, not a colour pill — the accent shows up as a
+   single dot rather than a saturated background, so green/program colours
+   stay restrained instead of tinting a badge on every section. */
 .section-badge {
-  display: inline-block;
-  background: var(--primary-soft);
-  color: var(--primary);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  padding: 0.4rem 1.2rem;
-  border-radius: 50px;
-  border: 1px solid rgba(0, 255, 0, 0.15);
-  margin-bottom: 1.5rem;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  margin-bottom: 1.25rem;
+}
+
+.section-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+  flex-shrink: 0;
 }

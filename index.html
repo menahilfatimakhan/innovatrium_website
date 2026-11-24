@@ -3,393 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Innovatrium | BNU Incubation Center</title>
-    <meta name="description" content="Innovatrium is BNU's incubation center, empowering startups with mentorship, funding, and global opportunities. Start. Build. Succeed.">
+    <title>Igniting Innovation, Empowering Growth | BNU Incubation Center</title>
+    <meta name="description" content="Welcome to Innovatrium at BNU, where startups transform bold ideas into the next big ventures. We provide world-class resources, mentorship, and opportunities designed to help you succeed.">
     <meta name="keywords" content="BNU, incubation, startups, Lahore, innovation, cybersecurity, venture capital, skills">
     <meta name="author" content="Innovatrium, BNU">
-    <meta property="og:title" content="Innovatrium | BNU Incubation Center">
-    <meta property="og:description" content="Where startups transform bold ideas into the next big ventures. Resources, mentorship, and global opportunities.">
+    <meta property="og:title" content="Igniting Innovation, Empowering Growth | BNU Incubation Center">
+    <meta property="og:description" content="Welcome to Innovatrium at BNU, where startups transform bold ideas into the next big ventures. We provide world-class resources, mentorship, and opportunities designed to help you succeed.">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" type="image/png" href="assets/images/logos/Innovatrium%20Logo.png">
-    <link rel="apple-touch-icon" href="assets/images/logos/Innovatrium%20Logo.png">
-
+    <meta name="generator" content="Innovatrium CMS">
+    <link rel="icon" type="image/png" href="assets/images/logos/logo-va.png">
+    <link rel="apple-touch-icon" href="assets/images/logos/logo-va.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,500;1,9..144,600;1,9..144,700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
-
+    <link rel="stylesheet" href="assets/css/pages/index.css">
     <style>
-        /* === HERO === */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            text-align: center;
-            overflow: hidden;
-            padding: calc(var(--header-height) + 2rem) 2rem 6rem;
-        }
-
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-        }
-
-        .hero-bg::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 900px;
-            height: 900px;
-            background: radial-gradient(circle, rgba(0,255,0,0.12) 0%, transparent 55%);
-            filter: blur(80px);
-            animation: float 8s ease-in-out infinite;
-        }
-
-        .hero-bg::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(to top, var(--bg-dark), transparent);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.8rem, 6vw, 4.5rem);
-            font-weight: 900;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #ffffff 30%, var(--primary) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1.1;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 650px;
-            margin: 0 auto 2.5rem;
-            color: #aaa;
-            line-height: 1.8;
-        }
-
-        .hero-btns {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 2.5rem;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 2;
-            color: #555;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .scroll-indicator i { font-size: 1rem; }
-
-        /* === STATS === */
-        .stats-section {
-            position: relative;
-            z-index: 10;
-            margin-top: -70px;
-            padding-bottom: var(--section-gap);
-        }
-
-        .stats-wrap {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 0;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: var(--shadow-card);
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 2.75rem 1.5rem;
-            border-right: 1px solid var(--border-color);
-            transition: var(--transition);
-        }
-
-        .stat-item:last-child { border-right: none; }
-
-        .stat-item:hover { background: var(--bg-card-alt); }
-
-        .stat-item h3 {
-            font-size: clamp(2rem, 3vw, 2.75rem);
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-            font-weight: 800;
-        }
-
-        .stat-item p {
-            font-weight: 500;
-            margin-bottom: 0;
-            color: #888;
-            font-size: 0.9rem;
-        }
-
-        /* === PROGRAMS GRID === */
-        .programs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .program-card {
-            text-align: center;
-            padding: 3rem 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .program-card .card-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 16px;
-            background: var(--primary-soft);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            transition: var(--transition);
-        }
-
-        .program-card:hover .card-icon {
-            background: var(--primary);
-            color: var(--bg-dark) !important;
-            transform: scale(1.1);
-        }
-
-        .program-card:hover .card-icon i { color: var(--bg-dark) !important; }
-
-        .program-card h3 { margin-bottom: 0.75rem; }
-
-        .program-card .card-arrow {
-            margin-top: auto;
-            padding-top: 1.5rem;
-            color: var(--primary);
-            font-size: 0.9rem;
-            font-weight: 500;
-            opacity: 0;
-            transform: translateY(8px);
-            transition: var(--transition);
-        }
-
-        .program-card:hover .card-arrow {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* === GALLERY === */
-        .home-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .home-gallery figure {
-            position: relative;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-card);
-        }
-
-        .home-gallery img {
-            width: 100%;
-            aspect-ratio: 4 / 3;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-
-        .home-gallery figure:hover img { transform: scale(1.05); }
-
-        .home-gallery figcaption {
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            padding: 1.5rem 1.25rem 1rem;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: #fff;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-        }
-
-        /* === PARTNERS STRIP === */
-        .partners {
-            border-top: 1px solid var(--border-color);
-        }
-
-        .partners-logos {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: clamp(2rem, 6vw, 4.5rem);
-            margin-top: 2.5rem;
-        }
-
-        .partners-logos img {
-            height: 48px;
-            width: auto;
-            opacity: 1;                 /* full colour — no more grey wash */
-            transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
-                        filter 0.35s ease;
-            will-change: transform;
-        }
-
-        .partners-logos img:hover {
-            transform: translateY(-5px) scale(1.06);
-            filter: drop-shadow(0 10px 22px rgba(0, 255, 0, 0.22));
-        }
-
-        /* === HIGHLIGHT / ABOUT === */
-        .highlight-section {
-            background: var(--bg-card);
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .highlight-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            align-items: center;
-        }
-
-        .highlight-text h2 { margin-bottom: 1.5rem; }
-
-        .checklist {
-            margin: 1.5rem 0 2rem;
-        }
-
-        .checklist li {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 0.8rem;
-            color: #ccc;
-            font-size: 0.95rem;
-        }
-
-        .checklist li i {
-            color: var(--primary);
-            font-size: 0.85rem;
-            flex-shrink: 0;
-        }
-
-        .highlight-visual {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .highlight-blob {
-            width: 100%;
-            max-width: 420px;
-            aspect-ratio: 1;
-            border-radius: 24px;
-            background: linear-gradient(135deg, rgba(0,255,0,0.15) 0%, rgba(0,0,0,0.6) 100%);
-            border: 1px solid rgba(0,255,0,0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            box-shadow: var(--shadow-glow);
-            padding: 10px;              /* thin green matte around the photo */
-            overflow: hidden;           /* clip the photo to the rounded frame */
-        }
-
-        .highlight-blob i {
-            font-size: 5rem;
-            color: var(--primary);
-            opacity: 0.7;
-            z-index: 1;
-        }
-
-        .highlight-blob .highlight-logo {
-            position: relative;
-            z-index: 1;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;          /* fill the square frame, no overflow */
-            border-radius: 16px;
-            display: block;
-        }
-
-        /* === CTA BANNER === */
-        .cta-banner {
-            text-align: center;
-            background: linear-gradient(135deg, var(--bg-card) 0%, rgba(0,255,0,0.03) 100%);
-            border-top: 1px solid var(--border-color);
-        }
-
-        .cta-banner h2 { margin-bottom: 1rem; }
-        .cta-banner p { max-width: 520px; margin: 0 auto 2rem; }
-
-        /* === RESPONSIVE === */
-        @media (max-width: 900px) {
-            .hero h1 { font-size: 2.5rem; }
-            .stats-wrap { grid-template-columns: 1fr 1fr; }
-            .stat-item:nth-child(2) { border-right: none; }
-            .stat-item:nth-child(1), .stat-item:nth-child(2) { border-bottom: 1px solid var(--border-color); }
-            .highlight-content { grid-template-columns: 1fr; gap: 3rem; }
-            .highlight-visual { order: -1; }
-        }
-
-        @media (max-width: 600px) {
-            .stats-wrap { grid-template-columns: 1fr; }
-            .stat-item { border-right: none; border-bottom: 1px solid var(--border-color); }
-            .stat-item:last-child { border-bottom: none; }
+        :root {
+            --primary: #49B96B;
+            --primary-dark: #2F9E5B;
+            --primary-soft: rgba(73, 185, 107, 0.1);
+            --primary-soft-line: rgba(73, 185, 107, 0.18);
+            --primary-soft-ink: rgba(73, 185, 107, 0.22);
+            --shadow-glow: 0 10px 28px rgba(73, 185, 107, 0.22);
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
     <nav class="navbar" role="navigation" aria-label="Main navigation">
         <a href="index.html" class="logo-lockup" aria-label="Innovatrium, BNU Incubation Center Home">
-            <img src="assets/images/logos/BNU%20logo.png" alt="Beaconhouse National University" class="logo-bnu">
             <span class="logo-text">INNO<img src="assets/images/logos/logo-va.png" alt="" class="logo-va">TRIUM</span>
         </a>
         <div class="nav-links">
-            <a href="index.html" class="active">Home</a>
+            <a href="index.html">Home</a>
             <a href="incubation.html">Incubation</a>
             <a href="cybersecurity.html">Cybersecurity</a>
             <a href="skilltoearn.html">Skill to Earn</a>
@@ -401,118 +50,109 @@
 
     <main>
 
-    <!-- Hero -->
     <section class="hero" id="home">
-        <div class="hero-bg"></div>
         <div class="hero-content reveal">
             <span class="section-badge">BNU Incubation Center</span>
             <h1>Igniting Innovation,<br>Empowering Growth</h1>
-            <p>Welcome to Innovatrium at BNU, where startups transform bold ideas into the next big ventures. We provide world-class resources, mentorship, and opportunities designed to help you succeed.</p>
+            <p>Welcome to Innovatrium at BNU, <span class="hero-accent" id="heroAccent">where startups transform bold ideas into the next big ventures</span>. We provide world-class resources, mentorship, and opportunities designed to help you succeed.</p>
             <div class="hero-btns">
                 <a href="#programs" class="btn btn-primary"><i class="fas fa-compass"></i> Discover Programs</a>
                 <a href="ventureden.html" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Apply for Funding</a>
             </div>
-        </div>
-        <div class="scroll-indicator">
-            <span>Scroll</span>
-            <i class="fas fa-chevron-down"></i>
+            <div class="scroll-indicator">
+                <span>Scroll</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
         </div>
     </section>
 
-    <!-- Stats -->
     <div class="stats-section">
         <div class="container">
-            <div class="stats-wrap reveal">
-                <div class="stat-item">
-                    <h3><span data-count="10" data-suffix="+">0</span></h3>
-                    <p>Startups Supported</p>
+                <div class="stats-layout reveal">
+                    <div class="stats-intro">
+                        <span class="section-badge">Our Impact</span>
+                        <p>Figures from Innovatrium's cohorts, clinics, and partner network so far.</p>
+                        <a href="#programs" class="stats-link">Explore our programs</a>
+                    </div>
+                    <div class="stats-track">
+                    <div class="stat-cell">
+                    <div class="stat-num" data-count="10+">10+</div>
+                    <div class="stat-label">Startups Supported</div>
                 </div>
-                <div class="stat-item">
-                    <h3><span data-count="20" data-suffix="K+">0</span></h3>
-                    <p>PKR Revenue</p>
+                    <div class="stat-cell">
+                    <div class="stat-num" data-count="20K+">20K+</div>
+                    <div class="stat-label">PKR Revenue</div>
                 </div>
-                <div class="stat-item">
-                    <h3><span data-count="1" data-suffix="M+">0</span></h3>
-                    <p>PKR Investment</p>
+                    <div class="stat-cell">
+                    <div class="stat-num" data-count="1M+">1M+</div>
+                    <div class="stat-label">PKR Investment</div>
                 </div>
-                <div class="stat-item">
-                    <h3><span data-count="30" data-suffix="+">0</span></h3>
-                    <p>Industry Partners</p>
+                    <div class="stat-cell">
+                    <div class="stat-num" data-count="30+">30+</div>
+                    <div class="stat-label">Industry Partners</div>
                 </div>
-            </div>
+                    </div>
+                </div>
         </div>
-    </div>
+            </div>
 
-    <!-- Programs -->
-    <section id="programs" class="section-padding light-section">
+    <section id="programs" class="section-padding">
         <div class="container">
             <div class="text-center reveal">
                 <span class="section-badge">What We Offer</span>
                 <h2>Our Programs</h2>
-                <p style="max-width: 600px; margin: 0 auto;">Nurturing startups with dedicated incubation, specialized clinics, hands-on skills, and venture funding.</p>
+                <p style="max-width: 600px; margin: 0.75rem auto 0;">Nurturing startups with dedicated incubation, specialized clinics, hands-on skills, and venture funding.</p>
             </div>
-
             <div class="programs-grid">
-                <a href="incubation.html" class="glass-card program-card reveal reveal-delay-1">
-                    <div class="card-icon"><i class="fas fa-rocket" style="color: var(--primary);"></i></div>
-                    <h3>Incubation Program</h3>
-                    <p>Where bright ideas take flight. Refine your vision, secure funding, and launch a scalable venture.</p>
+                <a href="incubation.html" class="program-card reveal reveal-delay-1" style="--card-accent: #A8D5BA; --icon-bg: rgba(168,213,186,0.35); --icon-fg: var(--text-main);">
+                    <div class="card-icon"><i class="fas fa-rocket"></i></div>
+                    <h3><span class="program-name-underline">Incubation</span></h3>
+                    <p>Where bright ideas take flight. Transform your startup vision into a scalable venture with our comprehensive support ecosystem.</p>
                     <div class="card-arrow">Learn More <i class="fas fa-arrow-right"></i></div>
                 </a>
-
-                <a href="cybersecurity.html" class="glass-card program-card reveal reveal-delay-2">
-                    <div class="card-icon"><i class="fas fa-shield-halved" style="color: var(--primary);"></i></div>
-                    <h3>Cybersecurity Clinic</h3>
-                    <p>Hands-on defense training, real-world clinics, and modern tools to tackle digital threats.</p>
+                <a href="cybersecurity.html" class="program-card reveal reveal-delay-2" style="--card-accent: #7C3AAD; --icon-bg: rgba(124,58,173,0.10); --icon-fg: #7C3AAD;">
+                    <div class="card-icon"><i class="fas fa-shield-halved"></i></div>
+                    <h3><span class="program-name-underline">Cybersecurity</span></h3>
+                    <p>Hands-on defense training, real-world clinics, and modern tools to tackle evolving digital threats.</p>
                     <div class="card-arrow">Learn More <i class="fas fa-arrow-right"></i></div>
                 </a>
-
-                <a href="skilltoearn.html" class="glass-card program-card reveal reveal-delay-3">
-                    <div class="card-icon"><i class="fas fa-laptop-code" style="color: var(--primary);"></i></div>
-                    <h3>Skill to Earn</h3>
-                    <p>Master high-demand technical skills and jumpstart your career through freelancing pathways.</p>
+                <a href="skilltoearn.html" class="program-card reveal reveal-delay-3" style="--card-accent: #2A9D8F; --icon-bg: rgba(42,157,143,0.10); --icon-fg: #2A9D8F;">
+                    <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3><span class="program-name-underline">Skill to Earn</span></h3>
+                    <p>Master high-demand technical skills and jumpstart your career through immediate freelancing and earning pathways.</p>
                     <div class="card-arrow">Learn More <i class="fas fa-arrow-right"></i></div>
                 </a>
-
-                <a href="ventureden.html" class="glass-card program-card reveal reveal-delay-4">
-                    <div class="card-icon"><i class="fas fa-chart-line" style="color: var(--primary);"></i></div>
-                    <h3>Venture Den</h3>
-                    <p>Pitch your ideas to top investors, secure funding, and network with consortium partners.</p>
+                <a href="ventureden.html" class="program-card reveal reveal-delay-4" style="--card-accent: #49B96B; --icon-bg: var(--primary-soft); --icon-fg: var(--primary-dark);">
+                    <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3><span class="program-name-underline">Venture Den</span></h3>
+                    <p>A dynamic marketplace where startups, students, and small businesses showcase and sell their products, and connect with real customers.</p>
                     <div class="card-arrow">Learn More <i class="fas fa-arrow-right"></i></div>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Gallery -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="text-center reveal">
+    <section class="section-padding"><div class="container"><div class="text-center reveal">
                 <span class="section-badge">Life at Innovatrium</span>
                 <h2>Where Founders Come Together</h2>
-                <p style="max-width: 600px; margin: 0 auto;">Snapshots from our cohorts, clinics, and community sessions on the BNU campus.</p>
+                <p style="max-width: 600px; margin: 0.75rem auto 0;">Snapshots from our cohorts, clinics, and community sessions on the BNU campus.</p>
             </div>
             <div class="home-gallery">
                 <figure class="reveal reveal-delay-1">
-                    <img src="assets/images/cohort/cohort-1.jpeg" alt="Innovatrium cohort group photo at BNU" loading="lazy">
+                    <img src="assets/images/uploads/cohort_1_d74c2cc57e.jpeg" alt="Cohort orientation, BNU campus" loading="lazy">
                     <figcaption>Cohort orientation, BNU campus</figcaption>
                 </figure>
                 <figure class="reveal reveal-delay-2">
-                    <img src="assets/images/cohort/cohort-2.jpeg" alt="Presenter addressing an Innovatrium cohort" loading="lazy">
+                    <img src="assets/images/uploads/cohort_2_5b94cad074.jpeg" alt="Mentor session in progress" loading="lazy">
                     <figcaption>Mentor session in progress</figcaption>
                 </figure>
                 <figure class="reveal reveal-delay-3">
-                    <img src="assets/images/cohort/cohort-3.jpeg" alt="Innovatrium clinic session with participants" loading="lazy">
+                    <img src="assets/images/uploads/cohort_3_c3c45271a2.jpeg" alt="Hands-on clinic workshop" loading="lazy">
                     <figcaption>Hands-on clinic workshop</figcaption>
                 </figure>
-            </div>
-        </div>
-    </section>
+            </div></div></section>
 
-    <!-- Highlight -->
-    <section class="section-padding highlight-section">
-        <div class="container">
-            <div class="highlight-content">
+    <section class="section-padding highlight-section"><div class="container"><div class="highlight-content">
                 <div class="highlight-text reveal">
                     <span class="section-badge">Global Reach</span>
                     <h2>Go Global at Innovatrium</h2>
@@ -526,66 +166,86 @@
                     <a href="#" class="btn btn-primary" data-cms="whatsapp"><i class="fab fa-whatsapp"></i> Join the Community</a>
                 </div>
                 <div class="highlight-visual reveal reveal-delay-2">
-                    <div class="highlight-blob">
-                        <img src="assets/images/logos/Centre%20for%20Innovation%20and%20Incubation%20.png" alt="Centre for Innovation and Incubation" class="highlight-logo">
-                        <div class="glow-effect"></div>
+                    <div class="highlight-glow" aria-hidden="true"></div>
+                    <div class="highlight-frame">
+                        <img src="assets/images/uploads/Centre_for_Innovation_and_Incubation_cff20f2e5d.png" alt="">
                     </div>
+                </div>
+            </div></div></section>
+
+    <section class="section-padding partners">
+        <div class="container text-center reveal">
+            <span class="section-badge">Backed By</span>
+            <h2>Our Partners &amp; Supporters</h2>
+        </div>
+        <!-- Auto-scrolling strip; hovering the strip greys every logo out
+             except the one under the cursor, which stays in full colour.
+             Pauses on hover so the highlighted logo doesn't drift away
+             mid-interaction. Duplicated once for a seamless loop. -->
+        <div class="partners-marquee">
+            <div class="partners-track">
+                <div class="partners-set">
+                    <img src="assets/images/uploads/BNU_logo_709fcc9e11.png" alt="Beaconhouse National University" class="mono-mark">
+                    <img src="assets/images/uploads/google_org_logo_382434c80d.png" alt="Google.org">
+                    <img src="assets/images/uploads/apac_logo_937c92c331.png" alt="APAC Cybersecurity Fund">
+                    <img src="assets/images/uploads/asia_foundation_logo_63212dd74c.png" alt="The Asia Foundation">
+                    <img src="assets/images/logos/NIC%20Logo.png" alt="NIC Lahore" class="logo-nic">
+                    <img src="assets/images/logos/Ministry%20of%20IT%20Logo.png" alt="Ministry of IT and Telecommunication" class="logo-moitt">
+                    <img src="assets/images/logos/Ignite%20Logo.png" alt="Ignite National Technology Fund" class="logo-ignite">
+                </div>
+                <div class="partners-set" aria-hidden="true">
+                    <img src="assets/images/uploads/BNU_logo_709fcc9e11.png" alt="" class="mono-mark">
+                    <img src="assets/images/uploads/google_org_logo_382434c80d.png" alt="">
+                    <img src="assets/images/uploads/apac_logo_937c92c331.png" alt="">
+                    <img src="assets/images/uploads/asia_foundation_logo_63212dd74c.png" alt="">
+                    <img src="assets/images/logos/NIC%20Logo.png" alt="" class="logo-nic">
+                    <img src="assets/images/logos/Ministry%20of%20IT%20Logo.png" alt="" class="logo-moitt">
+                    <img src="assets/images/logos/Ignite%20Logo.png" alt="" class="logo-ignite">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Partners -->
-    <section class="section-padding partners">
-        <div class="container text-center reveal">
-            <span class="section-badge">Backed By</span>
-            <h2>Our Partners &amp; Supporters</h2>
-            <div class="partners-logos">
-                <img src="assets/images/logos/BNU%20logo.png" alt="Beaconhouse National University">
-                <img src="assets/images/logos/google-org-logo.png" alt="Google.org">
-                <img src="assets/images/logos/apac-logo.png" alt="APAC Cybersecurity Fund">
-                <img src="assets/images/logos/asia-foundation-logo.png" alt="The Asia Foundation">
-            </div>
-        </div>
-    </section>
+    <section class="section-padding cta-banner"><div class="container"><div class="cta-banner reveal">
+                <h2>Transform Your Idea into Reality</h2>
+                <p>Applications for the next cohort are opening soon. Register your interest now.</p>
+                <a href="incubation.html" class="btn btn-dark-cta"><i class="fas fa-arrow-right"></i> Get Started</a>
+                <form class="talk-form" onsubmit="return false;">
+                <div class="field">
+                    <label for="tf-name">Name</label>
+                    <input id="tf-name" type="text" placeholder="Your name">
+                </div>
+                <div class="field">
+                    <label for="tf-email">Email</label>
+                    <input id="tf-email" type="email" placeholder="you@email.com">
+                </div>
+                <button class="btn btn-dark-cta" type="submit">Notify Me</button>
+            </form>
+            </div></div></section>
 
-    <!-- CTA Banner -->
-    <section class="section-padding cta-banner">
-        <div class="container reveal">
-            <span class="section-badge">Ready?</span>
-            <h2>Transform Your Idea into Reality</h2>
-            <p>Applications for the next cohort are opening soon. Register your interest now.</p>
-            <a href="incubation.html" class="btn btn-primary" style="padding: 1rem 2.5rem;"><i class="fas fa-arrow-right"></i> Get Started</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
     </main>
 
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="assets/images/logos/BNU%20logo.png" alt="Beaconhouse National University" class="footer-bnu">
                     <div class="logo-text">INNO<img src="assets/images/logos/logo-va.png" alt="" class="logo-va">TRIUM</div>
-                    <p>BNU Incubation Center. Your portal to global expansion, mentorship, and industry-leading venture support.</p>
+                    <p>BNU Incubation Center. Start. Build. Succeed.</p>
                     <div class="footer-social">
                         <a href="#" data-cms="instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="#" data-cms="facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" data-cms="linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-
                 <div class="footer-links">
                     <h4>Programs</h4>
                     <ul>
-                        <li><a href="incubation.html">Incubation Program</a></li>
-                        <li><a href="cybersecurity.html">Cybersecurity Clinic</a></li>
+                        <li><a href="incubation.html">Incubation</a></li>
+                        <li><a href="cybersecurity.html">Cybersecurity</a></li>
                         <li><a href="skilltoearn.html">Skill to Earn</a></li>
                         <li><a href="ventureden.html">Venture Den</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-links">
                     <h4>Contact Us</h4>
                     <ul>
@@ -595,17 +255,61 @@
                     </ul>
                 </div>
             </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2026 Innovatrium. BNU Incubation Center. All Rights Reserved.</p>
-            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Innovatrium. BNU Incubation Center. All Rights Reserved.</p></div>
         </div>
     </footer>
 
-    <!-- Back to Top -->
     <button class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
     <script src="assets/js/site-config.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <script>
+    /* GSAP + Lenis — Signature Moment #1: scroll-linked blur/fade on the hero's
+       italic mission line ONLY, as the user scrolls from the hero into
+       Programs. Not used anywhere else on this or any other page. */
+    (function(){
+      function loadScript(src){
+        return new Promise(function(resolve, reject){
+          var s = document.createElement('script');
+          s.src = src; s.onload = resolve; s.onerror = reject;
+          document.head.appendChild(s);
+        });
+      }
+      var GSAP_URL = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js';
+      var SCROLLTRIGGER_URL = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js';
+      var LENIS_URL = 'https://unpkg.com/lenis@1.1.14/dist/lenis.min.js';
+
+      Promise.all([loadScript(GSAP_URL), loadScript(SCROLLTRIGGER_URL), loadScript(LENIS_URL)])
+        .then(init)
+        .catch(function(err){ console.warn('Scroll-fx libraries failed to load:', err); });
+
+      function init(){
+        if (typeof gsap === 'undefined' || typeof Lenis === 'undefined') return;
+        gsap.registerPlugin(ScrollTrigger);
+
+        // duration/wheelMultiplier tuned down from Lenis's defaults — the
+        // out-of-the-box settings made a single small scroll wheel tick
+        // travel almost the whole page (it felt like the page was "flung"
+        // to the footer), which is a usability regression, not the buttery
+        // feel this effect is supposed to add.
+        var lenis = new Lenis({ duration: 0.7, wheelMultiplier: 0.75, smoothWheel: true });
+        gsap.ticker.add(function(time){ lenis.raf(time * 1000); });
+        gsap.ticker.lagSmoothing(0);
+        lenis.on('scroll', ScrollTrigger.update);
+
+        var accent = document.getElementById('heroAccent');
+        var heroEl = document.getElementById('home');
+        if (!accent || !heroEl) return;
+
+        gsap.to(accent, {
+          filter: 'blur(14px)',
+          opacity: 0,
+          ease: 'none',
+          scrollTrigger: { trigger: heroEl, start: 'center center', end: 'bottom top', scrub: true }
+        });
+      }
+    })();
+    </script>
 </body>
 </html>

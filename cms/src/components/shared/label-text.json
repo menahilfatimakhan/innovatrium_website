@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_shared_label_texts",
+  "info": {
+    "displayName": "Label Text",
+    "icon": "layer"
+  },
+  "options": {},
+  "attributes": {
+    "label": { "type": "string" },
+    "text": { "type": "text" }
+  }
+}

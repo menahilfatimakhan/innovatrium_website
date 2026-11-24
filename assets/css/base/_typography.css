@@ -7,8 +7,9 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: var(--font-sans);
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.08;
   margin-bottom: 1rem;
   letter-spacing: -0.02em;
 }
@@ -22,7 +23,16 @@ p {
   color: var(--text-muted);
   margin-bottom: 1rem;
   font-size: clamp(0.95rem, 1.2vw, 1.05rem);
-  line-height: 1.8;
+  line-height: 1.55; /* airy leading on body copy, without ballooning like the old 1.8 */
 }
 
-.text-primary { color: var(--primary) !important; }
+.text-primary { color: var(--primary-dark) !important; } /* deep variant — see AA note in _variables.css */
+
+/* One italic serif accent, reserved only for the hero mission line + stat
+   numerals (Home page) — see brief: never a third typeface, never reused
+   elsewhere. */
+.serif-accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+}

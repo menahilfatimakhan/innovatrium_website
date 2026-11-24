@@ -1,0 +1,430 @@
+/* Theme colors (--primary etc.) come from this page's Strapi "theme" field,
+   injected as an inline :root override — not hardcoded here — so they stay
+   editable through the CMS like every other page's accent color. */
+
+/* === Page layout ==================================================== */
+.content-section { padding: var(--section-gap) 0; }
+
+.skill-tracks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.track-card {
+    background: var(--bg-card);
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.track-card:hover {
+    border-color: var(--primary-dark);
+    box-shadow: 0 16px 36px rgba(20, 20, 20, 0.08);
+    transform: translateY(-4px);
+}
+
+.track-card .icon-wrap {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: var(--primary-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    transition: var(--transition);
+}
+
+.track-card .icon-wrap i {
+    font-size: 1.6rem;
+    color: var(--primary-dark);
+}
+
+.track-card:hover .icon-wrap {
+    background: var(--primary-dark);
+    transform: scale(1.08);
+}
+
+.track-card:hover .icon-wrap i { color: #fff; }
+
+.track-card h3 { margin-bottom: 0.5rem; }
+
+/* How it works */
+.how-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+/* Same "statement card" hover as the Incubation startup cards: the
+   card flips to a solid, deep-teal fill with light text, and the
+   step number spins — slowly here, rather than the quick bouncy
+   spin used elsewhere. */
+.how-step {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    background: var(--bg-card);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: background-color 0.4s ease, border-color 0.4s ease, transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.how-step:hover {
+    transform: translateY(-4px);
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+    box-shadow: 0 18px 40px rgba(20, 20, 20, 0.20);
+}
+
+.how-step .step-num {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: var(--primary-dark);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    margin: 0 auto 1rem;
+    transition: background-color 0.3s ease, transform 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.how-step:hover .step-num {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(360deg);
+}
+
+.how-step h4 { font-size: 1rem; margin-bottom: 0.5rem; transition: color 0.3s ease; }
+.how-step p { font-size: 0.9rem; margin-bottom: 0; transition: color 0.3s ease; }
+.how-step:hover h4 { color: #fff; }
+.how-step:hover p { color: rgba(255, 255, 255, 0.95); }
+
+@media (prefers-reduced-motion: reduce) {
+    .how-step:hover .step-num { transform: none; }
+}
+
+.cta-box {
+    margin-top: 3rem;
+    text-align: center;
+    background: var(--bg-card-alt);
+    padding: 4rem 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Pale accent-tint hover, same pattern reused on every program page's CTA box */
+.cta-box:hover {
+    background: var(--primary-soft);
+    border-color: var(--primary);
+}
+
+.cta-box h2 { margin-bottom: 1rem; }
+.cta-box p { margin-bottom: 2rem; }
+
+@media (max-width: 768px) {
+    .how-grid { grid-template-columns: 1fr; }
+}
+
+/* --- Venture Den: successful-ventures card grid ---------------------- */
+.ventures-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.venture-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition);
+}
+
+.venture-card:hover {
+    border-color: var(--primary-dark);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(20, 20, 20, 0.08);
+}
+
+.venture-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--primary-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--primary-dark);
+    margin: 0 auto 1.25rem;
+    transition: var(--transition);
+}
+
+.venture-card:hover .venture-icon { background: var(--primary-dark); color: #fff; }
+
+.venture-card h3 { margin-bottom: 0.35rem; font-size: 1.25rem; }
+.venture-tag { color: var(--primary-dark); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.4px; }
+.venture-card p { color: var(--text-muted); font-size: 0.9rem; margin: 0.75rem 0 0; }
+
+/* --- Venture Den: benefits strip (flip-to-solid-color hover) ---------- */
+.benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+/* Same "statement card" hover as the Incubation startup cards: the card
+   flips to a solid, deep-green fill with light text, and the icon spins —
+   slowly here, rather than the quick bouncy spin used elsewhere. Uses a
+   dedicated deep shade (not --primary-dark directly), since body-text-sized
+   copy needs the full 4.5:1 AA ratio that --primary-dark isn't tuned for. */
+.benefit-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: background-color 0.4s ease, border-color 0.4s ease, transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.benefit-card:hover {
+    background: #1E7A46;
+    border-color: #1E7A46;
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(20, 20, 20, 0.20);
+}
+
+.benefit-card i {
+    font-size: 1.75rem;
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+    display: inline-block;
+    transition: color 0.3s ease, transform 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.benefit-card:hover i {
+    color: #fff;
+    transform: rotate(360deg);
+}
+
+.benefit-card h4 { font-size: 1rem; margin-bottom: 0.5rem; transition: color 0.3s ease; }
+.benefit-card p { font-size: 0.9rem; margin-bottom: 0; transition: color 0.3s ease; }
+.benefit-card:hover h4 { color: #fff; }
+.benefit-card:hover p { color: rgba(255, 255, 255, 0.95); }
+
+@media (prefers-reduced-motion: reduce) {
+    .benefit-card:hover i { transform: none; }
+}
+
+/* --- Incubation: feature cards ---------------------------------------- */
+.feature-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.feature-card {
+    background: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    border-color: var(--primary-dark);
+    box-shadow: 0 16px 36px rgba(20, 20, 20, 0.08);
+    transform: translateY(-4px);
+}
+
+.feature-card .icon-wrap {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: var(--primary-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: var(--transition);
+}
+
+.feature-card .icon-wrap i {
+    font-size: 1.4rem;
+    color: var(--primary-dark);
+}
+
+.feature-card:hover .icon-wrap {
+    background: var(--primary-dark);
+}
+
+.feature-card:hover .icon-wrap i {
+    color: #fff;
+}
+
+/* --- Incubation: startup showcase cards (statement-card hover) -------- */
+.startups-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.startup-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-top: 4px solid var(--primary);
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow-card);
+    transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.startup-card:hover {
+    transform: translateY(-4px);
+    background: #1E7A46;
+    border-color: #1E7A46;
+    box-shadow: 0 18px 40px rgba(20, 20, 20, 0.20);
+    border-top-width: 6px;
+}
+
+.startup-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.4rem;
+}
+
+.startup-logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: var(--primary-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: var(--primary-dark);
+    flex-shrink: 0;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.startup-card:hover .startup-logo {
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+    transform: rotate(360deg) scale(1.08);
+}
+
+.startup-name {
+    margin: 0 0 0.2rem;
+    font-size: 1.3rem;
+    transition: color 0.3s ease;
+}
+
+.startup-card:hover .startup-name { color: #fff; }
+
+.startup-tag {
+    font-size: 0.8rem;
+    color: var(--primary-dark);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.startup-card:hover .startup-tag { color: #DDF3E4; }
+
+.startup-card p { margin-bottom: 0; color: var(--text-muted); transition: color 0.3s ease; }
+.startup-card:hover p { color: rgba(255, 255, 255, 0.9); }
+
+.startup-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-top: 1.5rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--primary-dark);
+    background: var(--primary-soft);
+    border: 1px solid transparent;
+    padding: 0.4rem 0.9rem;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.startup-card:hover .startup-badge {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.4);
+    color: #fff;
+}
+
+.startup-badge i { font-size: 0.85em; }
+
+@media (prefers-reduced-motion: reduce) {
+    .startup-card:hover .startup-logo { transform: none; }
+}
+
+/* --- Incubation: horizontal dot timeline ------------------------------- */
+.timeline {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 32px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    z-index: 0;
+}
+
+.timeline-item {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.timeline-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--primary-dark);
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 0 0 4px var(--primary-soft);
+}
+
+.timeline-item h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-item p {
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .timeline { grid-template-columns: 1fr; }
+    .timeline::before { display: none; }
+}

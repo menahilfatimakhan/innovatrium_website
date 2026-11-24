@@ -1,0 +1,363 @@
+/* === HERO === */
+.hero {
+    min-height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    padding: calc(var(--header-height) + 3rem) 2rem 2.5rem;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 780px;
+}
+
+.hero h1 {
+    font-size: clamp(2.6rem, 6vw, 4.25rem);
+    font-weight: 800;
+    margin-bottom: 1.75rem;
+    color: var(--text-main);
+    line-height: 1.08;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 660px;
+    margin: 0 auto 2.5rem;
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* One italic serif accent line, dropped into the sans-serif hero copy —
+   this is also the ONLY element the scroll-blur (Signature Moment #1)
+   ever touches. */
+.hero-accent {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+.hero-btns {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.scroll-indicator {
+    margin-top: 3rem;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* === STATS: sticky-left / 2-up vertical grid (Signature Moment #2) === */
+.stats-section {
+    position: relative;
+    z-index: 10;
+    padding-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.stats-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.stats-intro { position: sticky; top: calc(var(--header-height) + 1.5rem); }
+.stats-intro p { max-width: 26ch; margin: 0 0 1.25rem; }
+.stats-link { font-weight: 600; font-size: 0.9rem; color: var(--text-main); border-bottom: 1.5px solid var(--primary); padding-bottom: 2px; }
+
+/* Two-up grid — the right column scrolls past the sticky left column
+   as the page scrolls (no internal scroll container of its own). */
+.stats-track {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
+}
+
+.stat-cell {
+    padding: 1.5rem 1.25rem;
+    border-bottom: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+}
+
+.stat-num {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 700;
+    font-size: clamp(2.6rem, 5vw, 4rem);
+    color: var(--primary-dark);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+}
+.stat-label { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
+
+@media (max-width: 900px) {
+    .stats-layout { grid-template-columns: 1fr; }
+    .stats-intro { position: static; }
+}
+
+@media (max-width: 480px) {
+    .stats-track { grid-template-columns: 1fr; }
+}
+
+/* === PROGRAMS GRID (auto-generated nav cards, not CMS content) === */
+.programs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.program-card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 2.25rem 1.75rem 1.75rem;
+    border-top: 5px solid var(--card-accent, var(--border-color));
+    box-shadow: var(--shadow-card);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.program-card:hover { transform: translateY(-4px); border-top-width: 7px; }
+
+.program-card .card-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: var(--icon-bg, var(--primary-soft));
+    color: var(--icon-fg, var(--primary-dark));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.program-card h3 { margin-bottom: 0.5rem; font-size: 1.15rem; }
+.program-name-underline { border-bottom: 2px solid var(--card-accent, var(--primary)); padding-bottom: 2px; }
+.program-card p { font-size: 0.92rem; color: var(--text-muted); flex: 1; margin-bottom: 0; }
+.program-card .card-arrow { margin-top: 1.25rem; font-size: 0.85rem; font-weight: 600; color: var(--text-main); }
+
+@media (max-width: 900px) { .programs-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .programs-grid { grid-template-columns: 1fr; } }
+
+/* === GALLERY (doubles as the "Team" photo-grid treatment) === */
+.home-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.home-gallery figure {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+
+.home-gallery img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+    transition: filter 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Same "highlight this, dim the rest" pairing as the Partners carousel:
+   photos are in full colour at rest; hovering the grid greys every photo
+   out except the one under the cursor. The two rules are equal specificity,
+   so the individual-photo rule has to stay declared after the group rule to
+   win the tie for whichever photo the mouse is actually over. */
+.home-gallery:hover img { filter: grayscale(1); }
+.home-gallery figure:hover img { filter: grayscale(0) saturate(1.05); transform: scale(1.04); }
+
+.home-gallery figcaption {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 1.25rem 1.1rem 0.9rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(to top, rgba(0,0,0,0.72), transparent);
+}
+
+/* === PARTNERS STRIP — auto-scrolling carousel === */
+.partners { border-top: 1px solid var(--border-color); }
+
+.partners-marquee {
+    margin-top: 2.5rem;
+    overflow: hidden;
+    /* fade the strip's hard edges so logos scroll in/out softly */
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+            mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+
+.partners-track {
+    display: flex;
+    width: max-content;
+    animation: partnersScroll 34s linear infinite;
+}
+
+.partners-track:hover { animation-play-state: paused; }
+
+.partners-set {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: clamp(2.5rem, 6vw, 4.5rem);
+    padding: 0 clamp(1.25rem, 3vw, 2.25rem);
+}
+
+@keyframes partnersScroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* Hovering the strip greys every logo out; hovering one specific logo
+   brings just that one back to full colour — a classic "highlight this,
+   dim the rest" pair: the two rules have equal specificity, so the second
+   one (the individual-logo rule) has to stay declared after the group rule
+   to win the tie for whichever logo the mouse is actually over. */
+.partners-track img {
+    height: 44px;
+    width: auto;
+    transition: filter 0.3s ease, opacity 0.3s ease, transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.partners-track:hover img { filter: grayscale(1); opacity: 0.4; }
+.partners-track img:hover { filter: grayscale(0); opacity: 1; transform: translateY(-4px); }
+
+/* BNU's own logo is full-colour; every other mark in this strip is a flat
+   wordmark, so it's rendered in black here to sit quietly among them
+   instead of standing out as the odd one out. brightness(0) maps every
+   opaque pixel to black while preserving the PNG's transparency, so no
+   separate asset is needed. It's already monochrome, so it participates
+   in the dim/highlight dance via opacity only — grayscale has nothing left
+   to do to a pixel that's already pure black. The source PNG also has a
+   lot of empty canvas around a thin crest mark, so it renders much smaller
+   than the others at the same height — sized up here to compensate. */
+.partners-track img.mono-mark { filter: brightness(0); height: 76px; }
+.partners-track:hover img.mono-mark { filter: brightness(0); opacity: 0.4; }
+.partners-track img.mono-mark:hover { filter: brightness(0); opacity: 1; transform: translateY(-4px); }
+
+/* NIC, Ministry of IT and Ignite each carry a different amount of internal
+   padding around their actual mark in the source PNG (Ministry of IT's
+   crest fills most of its canvas; NIC's sits in a thin band with large
+   empty margins), so each needs its own height to read as roughly the
+   same visual size as Google/APAC/Asia Foundation. */
+.partners-track img.logo-nic { height: 155px; }
+.partners-track img.logo-moitt { height: 100px; }
+.partners-track img.logo-ignite { height: 100px; }
+
+@media (prefers-reduced-motion: reduce) {
+    .partners-track { animation: none; }
+}
+
+/* === HIGHLIGHT / ABOUT (Go Global) === */
+.highlight-section { background: var(--bg-card); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+
+.highlight-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+
+.highlight-text h2 { margin-bottom: 1.25rem; }
+
+.checklist { margin: 1.5rem 0 2rem; }
+.checklist li { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.8rem; color: var(--text-main); font-size: 0.95rem; }
+.checklist li i { color: var(--primary-dark); font-size: 0.85rem; flex-shrink: 0; }
+
+.highlight-visual { display: flex; justify-content: center; align-items: center; position: relative; }
+
+/* Soft ambient glow drifting behind the frame — the one decorative
+   flourish on this section, echoing the emerald accent used
+   elsewhere without ever sitting behind body text. */
+.highlight-glow {
+    position: absolute;
+    width: 340px;
+    height: 340px;
+    background: radial-gradient(circle, rgba(73, 185, 107, 0.16) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+    animation: highlightDrift 9s ease-in-out infinite;
+}
+
+@keyframes highlightDrift {
+    0%, 100% { transform: translate(-8%, -6%) scale(1); }
+    50% { transform: translate(6%, 5%) scale(1.12); }
+}
+
+.highlight-frame {
+    width: 100%;
+    max-width: 380px;
+    aspect-ratio: 1;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+.highlight-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+    transform-origin: center;
+    animation: highlightZoom 16s ease-in-out infinite alternate;
+}
+
+@keyframes highlightZoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.08); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .highlight-glow { animation: none; }
+    .highlight-frame img { animation: none; }
+}
+
+/* === CTA BANNER + micro-form === */
+.cta-banner { text-align: center; }
+.cta-banner h2 { margin-bottom: 1rem; }
+.cta-banner p { max-width: 520px; margin: 0 auto 2rem; }
+
+.talk-form { max-width: 420px; margin: 2.5rem auto 0; display: flex; flex-direction: column; gap: 1.25rem; text-align: left; }
+.talk-form .field label { display: block; font-size: 0.78rem; font-weight: 600; color: var(--text-muted); margin-bottom: 0.4rem; }
+.talk-form .field input {
+    width: 100%; border: none; border-bottom: 1.5px solid var(--border-color);
+    background: transparent; padding: 0.6rem 0.1rem; font-size: 1rem; color: var(--text-main);
+    transition: border-color 0.3s ease;
+}
+.talk-form .field input:focus { outline: none; border-bottom-color: var(--primary); }
+.talk-form .btn { align-self: center; margin-top: 0.5rem; }
+
+/* Black pill CTA — the one place on Home that deliberately uses black
+   instead of the emerald primary pill, per the brief's YC-style
+   monochrome button variety. */
+.btn-dark-cta { background: var(--text-main); color: var(--bg-dark); border-color: var(--text-main); }
+.btn-dark-cta:hover { transform: scale(1.03); box-shadow: 0 10px 24px rgba(20, 20, 20, 0.25); }
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+    .highlight-content { grid-template-columns: 1fr; gap: 3rem; }
+    .highlight-visual { order: -1; }
+}

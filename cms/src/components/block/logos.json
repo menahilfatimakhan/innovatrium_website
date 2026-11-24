@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_block_logos",
+  "info": {
+    "displayName": "Logos",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "badge": { "type": "string" },
+    "heading": { "type": "string" },
+    "intro": { "type": "text" },
+    "logos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.logo-item"
+    },
+    "logos2": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.logo-item",
+      "description": "Optional second row of logos, rendered directly below the first"
+    }
+  }
+}

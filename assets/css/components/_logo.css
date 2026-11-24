@@ -1,29 +1,23 @@
 /* ==========================================================================
    Logo wordmark — "INNO" + V/A glyph image + "TRIUM"
-   Used in both the navbar and the footer brand block.
+   Used in both the navbar and the footer brand block. The BNU mark was
+   removed from both (it now only appears once, in the Home "Our Partners"
+   strip), so the Innovatrium wordmark stands alone here.
    ========================================================================== */
 .logo-text {
   font-size: 1.3rem;
   font-weight: 600;          /* was 800 — dialled back so the wordmark reads refined, not heavy */
   letter-spacing: 1.5px;     /* was 3px */
   white-space: nowrap;
-  color: #fff;
+  color: var(--text-main);   /* black wordmark — green lives only in the V glyph image */
 }
 
 .logo-text span { color: var(--primary); }
 
-/* --- Navbar / footer lockup: BNU logo + Innovatrium wordmark ------------- */
 .logo-lockup {
   display: flex;
   align-items: center;
   gap: 0.85rem;
-}
-
-.logo-bnu {
-  height: 38px;
-  width: auto;
-  display: block;
-  flex-shrink: 0;
 }
 
 /* The green V/A glyph sits inline between the two text halves */
@@ -38,7 +32,7 @@
 
 .logo-subtitle {
   font-size: 0.55rem !important;
-  color: #888 !important;
+  color: var(--text-muted) !important;
   letter-spacing: 2.5px !important;
   font-weight: 400 !important;
   display: block !important;
@@ -53,11 +47,3 @@
 }
 
 .footer-brand .logo-text::before { display: none; }  /* no divider in footer */
-
-/* BNU logo above the Innovatrium wordmark in the footer */
-.footer-bnu {
-  height: 44px;
-  width: auto;
-  display: block;
-  margin-bottom: 1.1rem;
-}

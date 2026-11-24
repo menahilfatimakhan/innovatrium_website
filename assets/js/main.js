@@ -11,7 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Which program page are we on? (index -> null, no application block)
     const file = (location.pathname.split('/').pop() || 'index.html')
       .replace('.html', '');
-    const page = cfg.pages[file] || null;
+    // cfg.pages may not exist at all now that per-page status/deadline/form
+    // data is generated straight into static HTML by the Strapi pipeline —
+    // guard against that instead of assuming this key is always present.
+    const page = (cfg.pages && cfg.pages[file]) || null;
 
     const fmtDate = (iso) => {
       if (!iso) return '';
@@ -51,6 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
             el.innerHTML = open
               ? '<span class="status-dot"></span> Applications Open'
               : '<span class="status-dot"></span> Applications Closed';
+            // Same destination as the page's "Apply Now" button, so the
+            // status pill itself is clickable while applications are open.
+            if (open) setLink(el, page.formUrl);
           }
           break;
 
@@ -175,6 +181,22 @@ document.addEventListener('DOMContentLoaded', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
+
+  /* === Cyber map — tap-to-toggle tooltip for touch devices =============== */
+  /* Hover/focus already show the tooltip via CSS; this just adds tap support
+     wherever a `.map-marker` + adjacent `.map-tooltip` pair exists (currently
+     only the Cyber Clinic map on cybersecurity.html), so it's a no-op on
+     every other page. */
+  document.querySelectorAll('.map-marker').forEach(marker => {
+    marker.addEventListener('click', e => {
+      e.preventDefault();
+      const tip = marker.nextElementSibling;
+      document.querySelectorAll('.map-tooltip.is-open').forEach(t => {
+        if (t !== tip) t.classList.remove('is-open');
+      });
+      if (tip) tip.classList.toggle('is-open');
+    });
+  });
 
   /* === Animated Counters === */
   const counters = document.querySelectorAll('[data-count]');

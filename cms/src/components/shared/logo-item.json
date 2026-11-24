@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_logo_items",
+  "info": {
+    "displayName": "Logo Item",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "src": { "type": "media", "multiple": false, "allowedTypes": ["images"] },
+    "alt": { "type": "string" },
+    "mono": { "type": "boolean", "default": false, "description": "Render as a flat monochrome mark (for a full-colour logo sitting among wordmarks)" },
+    "sizeClass": { "type": "string", "description": "Optional extra CSS class for one-off sizing overrides (e.g. a logo that renders smaller than its neighbours at the same element height)" }
+  }
+}

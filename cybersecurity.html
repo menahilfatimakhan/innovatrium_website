@@ -4,22 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cybersecurity Clinic | Innovatrium, BNU</title>
-    <meta name="description" content="Innovatrium Cybersecurity Clinic. Hands-on defense training, live threat response, and modern tools to tackle evolving digital threats.">
+    <meta name="description" content="Hands-on defense training, real-world clinics, and modern tools to tackle evolving digital threats.">
     <meta property="og:title" content="Cybersecurity Clinic | Innovatrium">
-    <link rel="icon" type="image/png" href="assets/images/logos/Innovatrium%20Logo.png">
-    <link rel="apple-touch-icon" href="assets/images/logos/Innovatrium%20Logo.png">
+    <meta name="generator" content="Innovatrium CMS">
+    <link rel="icon" type="image/png" href="assets/images/logos/logo-va.png">
+    <link rel="apple-touch-icon" href="assets/images/logos/logo-va.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- See assets/css/base/_variables.css for the font-choice + AA-contrast notes -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/pages/program.css">
     <link rel="stylesheet" href="assets/css/pages/cybersecurity.css">
+    <style>
+        :root {
+            --primary: #7C3AAD;
+            --primary-dark: #5B2C82;
+            --primary-soft: rgba(124, 58, 173, 0.1);
+            --primary-soft-line: rgba(124, 58, 173, 0.18);
+            --primary-soft-ink: rgba(124, 58, 173, 0.22);
+            --shadow-glow: 0 10px 28px rgba(124, 58, 173, 0.22);
+        }
+    </style>
 </head>
 <body>
 
     <nav class="navbar" role="navigation" aria-label="Main navigation">
         <a href="index.html" class="logo-lockup" aria-label="Innovatrium, BNU Incubation Center Home">
-            <img src="assets/images/logos/BNU%20logo.png" alt="Beaconhouse National University" class="logo-bnu">
             <span class="logo-text">INNO<img src="assets/images/logos/logo-va.png" alt="" class="logo-va">TRIUM</span>
         </a>
         <div class="nav-links">
@@ -40,192 +52,220 @@
                 <h1>Cybersecurity Clinic</h1>
                 <p>Hands-on defense training, real-world clinics, and modern tools to tackle evolving digital threats.</p>
                 <div class="hero-meta">
-                    <span data-cms="status"></span>
-                    <span class="deadline-chip" data-cms="deadline"></span>
-                </div>
+                <a class="status-pill is-open" href="https://share.bnu.edu.pk/sites/Careers/Lists/ON%20Campus/DispForm.aspx?ID=152" target="_blank" rel="noopener"><span class="status-dot"></span> Applications Open</a>
+                <span class="deadline-chip"><i class="fas fa-calendar-day" aria-hidden="true"></i> Deadline: <strong>31 October 2025</strong></span>
+            </div>
             </div>
         </header>
 
         <section class="content-section light-section">
             <div class="container">
-                <!-- Intro + clinic photo -->
-                <div class="cyber-grid">
-                    <div class="reveal">
-                        <h2>Defend the Digital Frontier</h2>
-                        <p>The Cybersecurity Clinic at Innovatrium is open to everyone, no matter your field of study. Whether you come from business, law, design, the arts, engineering, or the sciences, you'll gain practical, hands-on experience defending against real cyber threats. Rather than just theory, you'll be thrust into live defense scenarios, no prior computer science background required.</p>
-                    </div>
-                    <div class="reveal reveal-delay-2">
-                        <div class="cyber-tile" role="img" aria-label="Digital defense">
-                            <span class="tile-badge"><i class="fas fa-shield-halved" aria-hidden="true"></i></span>
-                        </div>
-                    </div>
-                </div>
+            <div class="cyber-grid">
+                <div class="reveal cyber-copy">
 
-                <!-- Curriculum + clinic photo -->
-                <div class="cyber-grid" style="margin-top: 5rem;">
-                    <div class="reveal reveal-delay-1" style="order: 1;">
-                        <div class="cyber-tile" role="img" aria-label="Network defense">
-                            <span class="tile-badge"><i class="fas fa-network-wired" aria-hidden="true"></i></span>
-                        </div>
-                    </div>
-                    <div class="reveal" style="order: 2;">
-                        <h2>What You Will Learn</h2>
-                        <ul class="learn-list">
-                            <li><i class="fas fa-chevron-right" aria-hidden="true"></i> Vulnerability Scanning and Penetration Testing</li>
-                            <li><i class="fas fa-chevron-right" aria-hidden="true"></i> Network Defense and Intrusion Detection Systems</li>
-                            <li><i class="fas fa-chevron-right" aria-hidden="true"></i> Incident Response Protocols</li>
-                            <li><i class="fas fa-chevron-right" aria-hidden="true"></i> Secure Coding Practices</li>
-                            <li><i class="fas fa-chevron-right" aria-hidden="true"></i> Compliance, Risk Management and Privacy</li>
-                        </ul>
-                    </div>
-                </div>
+                    <h2>Defend the Digital Frontier</h2>
+                    <ul class="learn-list">
+                        <li><i class="fas fa-chevron-right" aria-hidden="true"></i> Open to everyone, no matter your field of study</li>
+                        <li><i class="fas fa-chevron-right" aria-hidden="true"></i> Business, law, design, the arts, engineering, or the sciences all welcome</li>
+                        <li><i class="fas fa-chevron-right" aria-hidden="true"></i> Practical, hands-on experience defending against real cyber threats</li>
+                        <li><i class="fas fa-chevron-right" aria-hidden="true"></i> Live defense scenarios, no prior computer science background required</li>
+                    </ul>
 
-                <!-- Who is this for -->
-                <div class="reveal" style="margin-top: 5rem; text-align: center;">
-                    <span class="section-badge">Audience</span>
-                    <h2>Who Is This For?</h2>
-                    <p style="max-width: 640px; margin: 0.5rem auto 0;">Open to students and professionals from <strong>every discipline</strong>, not just computer science. If you're curious about protecting people and organizations online, this clinic is for you.</p>
                 </div>
-                <div class="who-section">
-                    <div class="who-card reveal reveal-delay-1">
-                        <i class="fas fa-user-graduate" aria-hidden="true"></i>
-                        <h4>Students of Every Discipline</h4>
-                        <p>Business, law, design, engineering or sciences. All majors welcome, no coding background needed</p>
-                    </div>
-                    <div class="who-card reveal reveal-delay-2">
-                        <i class="fas fa-laptop-code" aria-hidden="true"></i>
-                        <h4>IT Professionals</h4>
-                        <p>Upskill and pivot into the cybersecurity sector</p>
-                    </div>
-                    <div class="who-card reveal reveal-delay-3">
-                        <i class="fas fa-building-shield" aria-hidden="true"></i>
-                        <h4>Startup Founders</h4>
-                        <p>Learn to protect your products and customer data</p>
+                <div class="reveal reveal-delay-2">
+                    <div class="cyber-tile" role="img" aria-label="Defend the Digital Frontier">
+                        <span class="tile-badge"><i class="fas fa-shield-halved" aria-hidden="true"></i></span>
                     </div>
                 </div>
+            </div>
 
-                <!-- Testimonials -->
-                <div class="reveal" style="margin-top: 5rem; text-align: center;">
-                    <span class="section-badge">Voices</span>
-                    <h2>What Our Cohort Says</h2>
-                    <p style="max-width: 640px; margin: 0.5rem auto 0;">Real reflections from participants of the Innovatrium Cybersecurity Clinic at BNU.</p>
-                </div>
-                <div class="testimonials">
-                    <div class="testimonial reveal reveal-delay-1">
-                        <div class="quote-mark">&ldquo;</div>
-                        <p>I came in from a business background with zero coding experience and left able to run a full vulnerability scan. The live scenarios made everything click.</p>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">MF</div>
-                            <div><div class="name">Menahil Fatima</div><div class="role">Clinic Participant</div></div>
-                        </div>
-                    </div>
-                    <div class="testimonial reveal reveal-delay-2">
-                        <div class="quote-mark">&ldquo;</div>
-                        <p>The mentors treated us like a real security team. Responding to a simulated breach under pressure taught me more than a whole semester of theory.</p>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">AH</div>
-                            <div><div class="name">Abdul Hadi Jalal</div><div class="role">Clinic Participant</div></div>
-                        </div>
-                    </div>
-                    <div class="testimonial reveal reveal-delay-3">
-                        <div class="quote-mark">&ldquo;</div>
-                        <p>What stayed with me was how welcoming it was to non-technical students. I study design, and I now understand how to build safer products from day one.</p>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">HA</div>
-                            <div><div class="name">Hania Atta</div><div class="role">Clinic Participant</div></div>
-                        </div>
-                    </div>
-                    <div class="testimonial reveal reveal-delay-1">
-                        <div class="quote-mark">&ldquo;</div>
-                        <p>The clinic gave me the confidence to pursue cybersecurity seriously. The hands-on labs are genuinely industry relevant, not just textbook exercises.</p>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">MT</div>
-                            <div><div class="name">Manahil Tanweer</div><div class="role">Clinic Participant</div></div>
-                        </div>
-                    </div>
-                    <div class="testimonial reveal reveal-delay-2">
-                        <div class="quote-mark">&ldquo;</div>
-                        <p>Intrusion detection finally made sense once I watched it happen live. The instructors break down complex ideas without dumbing them down.</p>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">KB</div>
-                            <div><div class="name">Khadija Basit</div><div class="role">Clinic Participant</div></div>
-                        </div>
-                    </div>
-                    <div class="testimonial reveal reveal-delay-3">
-                        <div class="quote-mark">&ldquo;</div>
-                        <p>A perfect mix of theory and practice. By the end I had built a small incident response playbook I still use in my own projects.</p>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">AF</div>
-                            <div><div class="name">Ahmed Fida</div><div class="role">Clinic Participant</div></div>
-                        </div>
-                    </div>
-                    <div class="testimonial reveal reveal-delay-1">
-                        <div class="quote-mark">&ldquo;</div>
-                        <p>The networking alone was worth it. I met peers and mentors who genuinely care about security, and we still collaborate after the program.</p>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">MH</div>
-                            <div><div class="name">Maarij Hassan</div><div class="role">Clinic Participant</div></div>
-                        </div>
-                    </div>
-                    <div class="testimonial reveal reveal-delay-2">
-                        <div class="quote-mark">&ldquo;</div>
-                        <p>Secure coding practices changed how I write software. I catch vulnerabilities now before they ever reach production.</p>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">RI</div>
-                            <div><div class="name">Raybaal Ishtiaq</div><div class="role">Clinic Participant</div></div>
-                        </div>
-                    </div>
-                    <div class="testimonial reveal reveal-delay-3">
-                        <div class="quote-mark">&ldquo;</div>
-                        <p>Backed by Google.org and The Asia Foundation, this clinic feels world class. I would recommend it to anyone curious about defending the digital world.</p>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">SB</div>
-                            <div><div class="name">Saad Bhatti</div><div class="role">Clinic Participant</div></div>
-                        </div>
+            <div class="cyber-grid">
+                <div class="reveal reveal-delay-2">
+                    <div class="cyber-tile" role="img" aria-label="What You Will Learn">
+                        <span class="tile-badge"><i class="fas fa-network-wired" aria-hidden="true"></i></span>
                     </div>
                 </div>
+                <div class="reveal cyber-copy">
 
-                <!-- Cohort gallery -->
-                <div class="reveal" style="margin-top: 5rem; text-align: center;">
-                    <span class="section-badge">In Action</span>
-                    <h2>Inside the Cybersecurity Clinic</h2>
-                    <p style="max-width: 640px; margin: 0.5rem auto 0;">Highlights from the orientation of our latest cybersecurity cohort at BNU.</p>
+                    <h2>What You Will Learn</h2>
+                    
+                    <ul class="learn-list">
+                    <li><i class="fas fa-chevron-right" aria-hidden="true"></i> Vulnerability Scanning and Penetration Testing</li>
+                    <li><i class="fas fa-chevron-right" aria-hidden="true"></i> Network Defense and Intrusion Detection Systems</li>
+                    <li><i class="fas fa-chevron-right" aria-hidden="true"></i> Incident Response Protocols</li>
+                    <li><i class="fas fa-chevron-right" aria-hidden="true"></i> Secure Coding Practices</li>
+                    <li><i class="fas fa-chevron-right" aria-hidden="true"></i> Compliance, Risk Management and Privacy</li>
+                </ul>
+                </div>
+            </div>
+
+            <div class="reveal" style="margin-top: 2.5rem; text-align: center;">
+                <span class="section-badge">Audience</span>
+                <h2>Built for Every Discipline</h2>
+                <p>Open to students and professionals from <strong>every discipline</strong>, not just computer science. If you're curious about protecting people and organizations online, this clinic is for you.</p>
+            </div>
+            <div class="who-section">
+                <div class="who-card reveal reveal-delay-1">
+                    <i class="fas fa-user-graduate"></i>
+                    <h4>Students of Every Discipline</h4>
+                    
+                    <p>Business, law, design, engineering or sciences. All majors welcome, no coding background needed</p>
+                </div>
+                <div class="who-card reveal reveal-delay-2">
+                    <i class="fas fa-laptop-code"></i>
+                    <h4>IT Professionals</h4>
+                    
+                    <p>Upskill and pivot into the cybersecurity sector</p>
+                </div>
+                <div class="who-card reveal reveal-delay-3">
+                    <i class="fas fa-building-shield"></i>
+                    <h4>Startup Founders</h4>
+                    
+                    <p>Learn to protect your products and customer data</p>
+                </div>
+            </div>
+
+            <div class="reveal text-center" style="margin-top: 3rem;">
+                <span class="section-badge">Voices</span>
+                <h2>What Our Cohort Says</h2>
+                <p style="max-width: 640px; margin: 0.5rem auto 0;">Real reflections from participants of the Innovatrium Cybersecurity Clinic at BNU.</p>
+            </div>
+            <div class="testimonials">
+                <div class="testimonial reveal reveal-delay-1">
+                    <div class="quote-mark">&ldquo;</div>
+                    <p>I came in from a business background with zero coding experience and left able to run a full vulnerability scan. The live scenarios made everything click.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MF</div>
+                        <div><div class="name">Menahil Fatima</div><div class="role">Clinic Participant</div></div>
+                    </div>
+                </div>
+                <div class="testimonial reveal reveal-delay-2">
+                    <div class="quote-mark">&ldquo;</div>
+                    <p>The mentors treated us like a real security team. Responding to a simulated breach under pressure taught me more than a whole semester of theory.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">AH</div>
+                        <div><div class="name">Abdul Hadi Jalal</div><div class="role">Clinic Participant</div></div>
+                    </div>
+                </div>
+                <div class="testimonial reveal reveal-delay-3">
+                    <div class="quote-mark">&ldquo;</div>
+                    <p>What stayed with me was how welcoming it was to non-technical students. I study design, and I now understand how to build safer products from day one.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">HA</div>
+                        <div><div class="name">Hania Atta</div><div class="role">Clinic Participant</div></div>
+                    </div>
+                </div>
+                <div class="testimonial reveal reveal-delay-4">
+                    <div class="quote-mark">&ldquo;</div>
+                    <p>The clinic gave me the confidence to pursue cybersecurity seriously. The hands-on labs are genuinely industry relevant, not just textbook exercises.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MT</div>
+                        <div><div class="name">Manahil Tanweer</div><div class="role">Clinic Participant</div></div>
+                    </div>
+                </div>
+                <div class="testimonial reveal reveal-delay-1">
+                    <div class="quote-mark">&ldquo;</div>
+                    <p>Intrusion detection finally made sense once I watched it happen live. The instructors break down complex ideas without dumbing them down.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">KB</div>
+                        <div><div class="name">Khadija Basit</div><div class="role">Clinic Participant</div></div>
+                    </div>
+                </div>
+                <div class="testimonial reveal reveal-delay-2">
+                    <div class="quote-mark">&ldquo;</div>
+                    <p>A perfect mix of theory and practice. By the end I had built a small incident response playbook I still use in my own projects.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">AF</div>
+                        <div><div class="name">Ahmed Fida</div><div class="role">Clinic Participant</div></div>
+                    </div>
+                </div>
+                <div class="testimonial reveal reveal-delay-3">
+                    <div class="quote-mark">&ldquo;</div>
+                    <p>The networking alone was worth it. I met peers and mentors who genuinely care about security, and we still collaborate after the program.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MH</div>
+                        <div><div class="name">Maarij Hassan</div><div class="role">Clinic Participant</div></div>
+                    </div>
+                </div>
+                <div class="testimonial reveal reveal-delay-4">
+                    <div class="quote-mark">&ldquo;</div>
+                    <p>Secure coding practices changed how I write software. I catch vulnerabilities now before they ever reach production.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">RI</div>
+                        <div><div class="name">Raybaal Ishtiaq</div><div class="role">Clinic Participant</div></div>
+                    </div>
+                </div>
+                <div class="testimonial reveal reveal-delay-1">
+                    <div class="quote-mark">&ldquo;</div>
+                    <p>Backed by Google.org and The Asia Foundation, this clinic feels world class. I would recommend it to anyone curious about defending the digital world.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SB</div>
+                        <div><div class="name">Saad Bhatti</div><div class="role">Clinic Participant</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reveal" style="margin-top: 3rem; text-align: center;">
+                <span class="section-badge">In Action</span>
+                <h2>Inside the Cybersecurity Clinic</h2>
+                <p style="max-width: 640px; margin: 0.5rem auto 0;">Highlights from the orientation of our latest cybersecurity cohort at BNU.</p>
                     <div class="cohort-gallery">
-                        <img src="assets/images/cohort/cohort-1.jpeg" alt="APAC Cybersecurity orientation, cohort group photo" loading="lazy">
-                        <img src="assets/images/cohort/cohort-2.jpeg" alt="BNU Cybersecurity Clinic orientation, presenter addressing the 2nd cohort" loading="lazy">
-                        <img src="assets/images/cohort/cohort-3.jpeg" alt="BNU Cybersecurity Clinic orientation session, 2nd cohort" loading="lazy">
+                        <img src="assets/images/uploads/cohort_1_d74c2cc57e.jpeg" alt="APAC Cybersecurity orientation, cohort group photo" loading="lazy">
+                        <img src="assets/images/uploads/cohort_2_5b94cad074.jpeg" alt="BNU Cybersecurity Clinic orientation, presenter addressing the 2nd cohort" loading="lazy">
+                        <img src="assets/images/uploads/cohort_3_c3c45271a2.jpeg" alt="BNU Cybersecurity Clinic orientation session, 2nd cohort" loading="lazy">
+                    </div>
+            </div>
+
+            <div class="reveal" style="margin-top: 3rem; text-align: center;">
+                <span class="section-badge">Supported By</span>
+                <h2>Backed by the APAC Cybersecurity Fund</h2>
+                <p style="max-width: 680px; margin: 0.5rem auto 0;">This clinic is proudly funded by <strong>Google.org</strong> and <strong>The Asia Foundation</strong> under the <strong>APAC Cybersecurity Fund</strong>, delivered in collaboration with the <strong>Consortium of Cyber Security</strong> and the <strong>Global Cyber Alliance</strong>.</p>
+                <div class="funding-logos">
+                    <img src="assets/images/uploads/google_org_logo_382434c80d.png" alt="Google.org">
+                    <img src="assets/images/uploads/apac_logo_937c92c331.png" alt="APAC Cybersecurity Fund">
+                    <img src="assets/images/uploads/asia_foundation_logo_63212dd74c.png" alt="The Asia Foundation">
+                </div>
+                <div class="funding-logos funding-logos--row2">
+                    <img src="assets/images/uploads/Cyber_Consortium_Logo_43cdaa8de2.png" alt="Consortium of Cyber Security" class="logo-consortium">
+                    <img src="assets/images/uploads/Cyber_Alliance_Logo_cadeeee624.png" alt="Global Cyber Alliance" class="logo-alliance">
+                </div>
+            </div>
+
+            <div class="reveal" style="margin-top: 3rem; text-align: center;">
+                <span class="section-badge">Where We Operate</span>
+                <h2>Our Cyber Clinic Network</h2>
+                <p style="max-width: 640px; margin: 0.5rem auto 0;">Live in Lahore today, expanding to Islamabad next.</p>
+            </div>
+            <div class="cyber-map-wrap reveal">
+                    <span class="map-region-pill">Pakistan</span>
+                    <div class="cyber-map">
+                        <img class="cyber-map-img" src="assets/images/maps/pakistan-dots.png" alt="Dot-matrix map of Pakistan" width="475" height="483">
+
+                        <button class="map-marker map-marker--outline" style="left:71%; top:24%;" aria-describedby="tip-isb">
+                            <span class="marker-glow"></span>
+                            <span class="marker-dot"></span>
+                        </button>
+                        <div class="map-tooltip" id="tip-isb" style="left:71%; top:24%;">
+                            <strong>Islamabad</strong>
+                            <p>APAC Cyber Clinic — in progress</p>
+                        </div>
+                        <button class="map-marker" style="left:78%; top:42%;" aria-describedby="tip-lhe">
+                            <span class="marker-glow"></span>
+                            <span class="marker-dot"></span>
+                        </button>
+                        <div class="map-tooltip" id="tip-lhe" style="left:78%; top:42%;">
+                            <strong>Lahore</strong>
+                            <p>Beaconhouse National University — Pakistan's first Cyber Clinic</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Partners -->
-                <div class="reveal" style="margin-top: 5rem; text-align: center;">
-                    <span class="section-badge">In Partnership With</span>
-                    <h2>Our Cyber Alliance</h2>
-                    <p style="max-width: 680px; margin: 0.5rem auto 0;">Delivered in collaboration with the <strong>Consortium of Cyber Security</strong> and the <strong>Global Cyber Alliance</strong>, connecting our cohort to a worldwide security community.</p>
-                    <div class="partner-logos">
-                        <img src="assets/images/logos/Cyber%20Consortium%20Logo.png" alt="Consortium of Cyber Security">
-                        <img src="assets/images/logos/Cyber%20Alliance%20Logo.png" alt="Global Cyber Alliance">
-                    </div>
-                </div>
-
-                <!-- Funded by -->
-                <div class="reveal" style="margin-top: 5rem; text-align: center;">
-                    <span class="section-badge">Supported By</span>
-                    <h2>Backed by the APAC Cybersecurity Fund</h2>
-                    <p style="max-width: 680px; margin: 0.5rem auto 0;">This clinic is proudly funded by <strong>Google.org</strong> and <strong>The Asia Foundation</strong> under the <strong>APAC Cybersecurity Fund</strong>, expanding access to cybersecurity skills across the region.</p>
-                    <div class="funding-logos">
-                        <img src="assets/images/logos/google-org-logo.png" alt="Google.org">
-                        <img src="assets/images/logos/apac-logo.png" alt="APAC Cybersecurity Fund">
-                        <img src="assets/images/logos/asia-foundation-logo.png" alt="The Asia Foundation">
-                    </div>
-                </div>
-
-                <!-- Call to action -->
-                <div class="cta-box reveal">
-                    <h2>Start Your Cyber Journey</h2>
-                    <p>Enroll in the next clinic session and level up your digital defense skills.</p>
-                    <a href="#" class="btn btn-primary" data-cms="form"><i class="fas fa-paper-plane" aria-hidden="true"></i> Register Now</a>
-                </div>
+            <div class="cta-box reveal">
+                <h2>Start Your Cyber Journey</h2>
+                <p>Enroll in the next clinic session and level up your digital defense skills.</p>
+                <a href="https://share.bnu.edu.pk/sites/Careers/Lists/ON%20Campus/DispForm.aspx?ID=152" class="btn btn-primary" target="_blank" rel="noopener"><i class="fas fa-paper-plane"></i> Register Now</a>
+                
+            </div>
             </div>
         </section>
     </main>
@@ -234,7 +274,6 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="assets/images/logos/BNU%20logo.png" alt="Beaconhouse National University" class="footer-bnu">
                     <div class="logo-text">INNO<img src="assets/images/logos/logo-va.png" alt="" class="logo-va">TRIUM</div>
                     <p>BNU Incubation Center. Start. Build. Succeed.</p>
                     <div class="footer-social">
@@ -246,8 +285,8 @@
                 <div class="footer-links">
                     <h4>Programs</h4>
                     <ul>
-                        <li><a href="incubation.html">Incubation Program</a></li>
-                        <li><a href="cybersecurity.html">Cybersecurity Clinic</a></li>
+                        <li><a href="incubation.html">Incubation</a></li>
+                        <li><a href="cybersecurity.html">Cybersecurity</a></li>
                         <li><a href="skilltoearn.html">Skill to Earn</a></li>
                         <li><a href="ventureden.html">Venture Den</a></li>
                     </ul>

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_cards",
+  "info": {
+    "displayName": "Card",
+    "icon": "layer"
+  },
+  "options": {},
+  "attributes": {
+    "icon": { "type": "string" },
+    "title": { "type": "string" },
+    "text": { "type": "text" },
+    "tag": { "type": "string", "description": "Optional short label shown under the title (e.g. a category)" },
+    "badgeIcon": { "type": "string", "description": "Optional icon for a trailing pill badge (e.g. showcase cards)" },
+    "badgeLabel": { "type": "string", "description": "Optional label for a trailing pill badge" }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_block_galleries",
+  "info": {
+    "displayName": "Gallery",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "badge": { "type": "string" },
+    "heading": { "type": "string" },
+    "intro": { "type": "text" },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.gallery-item"
+    }
+  }
+}

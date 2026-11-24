@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_application_infos",
+  "info": {
+    "displayName": "Application Info",
+    "icon": "calendar"
+  },
+  "options": {},
+  "attributes": {
+    "formUrl": { "type": "string" },
+    "deadline": { "type": "date" },
+    "status": {
+      "type": "enumeration",
+      "enum": ["open", "closed"],
+      "default": "open"
+    }
+  }
+}

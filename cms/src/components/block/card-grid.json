@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_block_card_grids",
+  "info": {
+    "displayName": "Card Grid",
+    "icon": "grid"
+  },
+  "options": {},
+  "attributes": {
+    "badge": { "type": "string" },
+    "heading": { "type": "string" },
+    "intro": { "type": "text" },
+    "styleKey": { "type": "string", "description": "Presentation variant key for pages with more than one card style (e.g. \"ventures\" vs \"benefits\") — set by render.js's per-page variant lookup, not needed on generic pages" },
+    "cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.card"
+    }
+  }
+}

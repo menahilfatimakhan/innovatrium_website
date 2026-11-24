@@ -1,8 +1,8 @@
 {
-  "name": "innovatrium-cms",
-  "version": "1.0.0",
+  "name": "innovatrium-site-server",
+  "version": "2.0.0",
   "private": true,
-  "description": "Tiny password-protected CMS backend for the Innovatrium website (form links, deadlines, application status).",
+  "description": "Static file server for the Innovatrium website, plus a webhook endpoint that regenerates pages from Strapi on publish.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "dotenv": "^16.4.5",
-    "express": "^4.19.2",
-    "express-session": "^1.18.0"
+    "express": "^4.19.2"
   }
 }

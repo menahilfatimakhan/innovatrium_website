@@ -13,15 +13,29 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Reserves scrollbar space up front so it doesn't come and go depending
+     on whether a given page is taller than the viewport — without this,
+     centered content (page-hero titles especially) sits at a slightly
+     different horizontal centre on pages with a scrollbar vs. pages
+     without one, which reads as "not centered" when flipping between them. */
+  scrollbar-gutter: stable;
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: var(--font-sans);
   background-color: var(--bg-dark);
   color: var(--text-main);
-  line-height: 1.7;
+  line-height: 1.55;
   overflow-x: hidden;
+  /* Sticky footer: on pages shorter than the viewport, this keeps the
+     footer pinned to the bottom edge instead of leaving a stretch of
+     bare body background under it that reads as "extra footer padding". */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
+
+main { flex: 1; }
 
 a {
   text-decoration: none;
